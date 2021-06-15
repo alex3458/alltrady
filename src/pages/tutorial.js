@@ -1,43 +1,46 @@
 import React from "react"
 import AcademyPageLayout from "../layouts/AcademyPageLayout"
-import HeroComponent from "../components/hero"
-import CourseSection from "../sections/courses"
 import JoinNowSection from "../sections/join-now"
-
+import TutorialSection from "../sections/tutorials"
 import Seo from "../components/seo"
 import { graphql } from "gatsby"
-import { BlogImg } from "../utils/imgLoader"
 
-const headerContent = `Welcome to Altrady Crypto Trading Academy`
-const sectionContent = `Step by step, crypto trading tutorials to help you in your trading journey!`
-const courseTitle = "Courses:"
-
-const courseContent = `We believe it is important that you know what we’re building, and we’d love to hear your feedback and other feature requests.`
-
-const Academy = ({ data }) => {
+const Tutorial = ({ location, data }) => {
+  const currentSlug = location.pathname.split("/")[2]
   const exchangeData =
     data && data.allPrismicExchange.nodes[2].data.exchange_item
-  const categoryData = data && data.allPrismicCourseCategory.nodes
-  const tutorialData = data && data.allPrismicTutorial.nodes
+
+  const tutorialData =
+    data &&
+    data.allPrismicTutorial.nodes.filter(item => item.data.slug === currentSlug)
+  const currentTutorial = tutorialData[0] && tutorialData[0].data
+
+  const categoryId = tutorialData[0] && tutorialData[0].data.category.id
+  const currentCategory =
+    data &&
+    data.allPrismicCourseCategory.nodes.filter(
+      item => item.prismicId === categoryId
+    )
+  const categorySlug = currentCategory[0] && currentCategory[0].data.slug
+  const categoryName = currentCategory[0] && currentCategory[0].data.name
+
+  const tutorialList =
+    data &&
+    data.allPrismicTutorial.nodes.filter(
+      item => item.data.category.id === categoryId
+    )
+
   return (
     <AcademyPageLayout navData={exchangeData}>
       <Seo
         title="Altrady - Crypto Academy To Expand Your Trading Knowledge"
         description="Altrady brings to you his cryptocurrency academy to help beginners and more advanced crypto traders with their trading strategy."
       />
-      <HeroComponent
-        clsName="section hero academy"
-        headerContent={headerContent}
-        sectionContent={sectionContent}
-        kickerText="Learn crypto trading"
-        heroImg={BlogImg}
-        type="academy"
-      />
-      <CourseSection
-        title={courseTitle}
-        content={courseContent}
-        categoryData={categoryData}
-        tutorialData={tutorialData}
+      <TutorialSection
+        currentTutorial={currentTutorial}
+        tutorialList={tutorialList}
+        categorySlug={categorySlug}
+        categoryName={categoryName}
       />
       <JoinNowSection type="academy" />
     </AcademyPageLayout>
@@ -45,16 +48,12 @@ const Academy = ({ data }) => {
 }
 
 export const query = graphql`
-  query Academy {
+  query Tutorial {
     allPrismicCourseCategory {
       nodes {
         data {
           name
-          description
           slug
-          course_cover {
-            url
-          }
         }
         prismicId
       }
@@ -68,6 +67,10 @@ export const query = graphql`
           name
           duration
           slug
+          description {
+            raw
+          }
+          video_embed
         }
       }
     }
@@ -87,4 +90,4 @@ export const query = graphql`
   }
 `
 
-export default Academy
+export default Tutorial

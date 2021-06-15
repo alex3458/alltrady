@@ -21,7 +21,6 @@ const Course = ({ location, data }) => {
     data.allPrismicTutorial.nodes.filter(
       item => item.data.category.id === courseId
     )
-  console.log(categoryData)
   return (
     <AcademyPageLayout navData={exchangeData}>
       <Seo
@@ -33,6 +32,7 @@ const Course = ({ location, data }) => {
         headerContent={categoryData[0] && categoryData[0].data.name}
         sectionContent={categoryData[0] && categoryData[0].data.description}
         heroImg={categoryData[0] && categoryData[0].data.course_cover.url}
+        slug={categoryData[0] && categoryData[0].data.slug}
         type="course"
       />
       <CourseDetail
@@ -69,6 +69,7 @@ export const query = graphql`
           }
           name
           duration
+          slug
         }
       }
     }

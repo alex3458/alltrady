@@ -12,6 +12,7 @@ const HeroComponent = ({
   sectionCaption,
   heroImg,
   type,
+  slug,
 }) => {
   return (
     <section className={clsName}>
@@ -23,7 +24,10 @@ const HeroComponent = ({
                 <Link to="/academy" className="pr-3">
                   Altrady Academy
                 </Link>
-                /<p className="pl-3">{headerContent}</p>
+                /
+                <Link to={`/course/${slug}`} className="pl-3">
+                  {headerContent}
+                </Link>
               </div>
             )}
             <p className="kicker">{kickerText}</p>
