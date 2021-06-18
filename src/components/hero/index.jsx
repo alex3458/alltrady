@@ -34,10 +34,9 @@ const HeroComponent = ({
             <h1 className="section-title">{headerContent}</h1>
             <p className="section-content">{sectionContent}</p>
             <div className="btn-container">
-              {type !== "academy" ||
-                ("course" && (
-                  <LinkPrimaryBtn to="/">Try for Free</LinkPrimaryBtn>
-                ))}
+              {type !== "academy" && type !== "course" && (
+                <LinkPrimaryBtn to="/">Try for Free</LinkPrimaryBtn>
+              )}
               {sectionCaption && (
                 <LinkSecondBtn to="/why-altrady">Why Altrady?</LinkSecondBtn>
               )}

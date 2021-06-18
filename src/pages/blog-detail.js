@@ -8,17 +8,15 @@ import Seo from "../components/seo"
 
 const BlogDetail = ({ location, data }) => {
   const currentSlug = location.pathname.split("/")[2]
-  const blogData = data && data.allPrismicBlogPostApi.nodes
+  const blogData = data.allPrismicBlogPostApi.nodes
   const currentBlog =
     blogData && blogData.filter(item => item.data.slug === currentSlug)
-  const categories = data && data.allPrismicBlogCategory.nodes
+  const categories = data.allPrismicBlogCategory.nodes
   const features =
     blogData && blogData.filter(item => item.data.featured === true).slice(0, 5)
   const moreBlog = blogData && blogData.slice(0, 8)
-  const exchangeData =
-    data && data.allPrismicExchange.nodes[2].data.exchange_item
   return (
-    <BlogPageLayout navData={exchangeData}>
+    <BlogPageLayout>
       <Seo
         title={currentBlog[0] ? currentBlog[0].data.meta_title : ""}
         description={currentBlog[0] ? currentBlog[0].data.meta_description : ""}
@@ -88,19 +86,6 @@ export const query = graphql`
           meta_title
           meta_keywords
           meta_description
-        }
-      }
-    }
-    allPrismicExchange {
-      nodes {
-        data {
-          exchange_item {
-            content
-            exc_img {
-              url
-            }
-            title
-          }
         }
       }
     }

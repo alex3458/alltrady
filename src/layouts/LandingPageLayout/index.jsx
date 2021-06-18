@@ -2,13 +2,12 @@ import React from "react"
 import Header from "../../components/header"
 import Footer from "../../components/footer"
 
-const LandingPageLayout = ({ children, navData }) => {
+const LandingPageLayout = ({ children }) => {
   return (
     <>
-      <Header navData={navData} />
-      <div className="overlap"></div>
+      <Header />
       <main>{children}</main>
-      <Footer exchangeData={navData[2].data.exchange_item} />
+      <Footer />
     </>
   )
 }

@@ -1,19 +1,8 @@
 import React from "react"
-
 import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
-import {
-  BLogo,
-  Facebook,
-  Twitter,
-  Discord,
-  Telegram,
-  CryptoBaseScannerBitcoin,
-  CryptoQuickScanner,
-  Coindelist,
-  Coinredact,
-  Coinray,
-} from "../utils/imgLoader"
+import { BLogo, Facebook, Twitter, Discord, Telegram } from "../utils/imgLoader"
 
 const features = [
   "Multi-exchange",
@@ -32,35 +21,41 @@ const features = [
   "Watch lists",
 ]
 
-const partners = [
-  {
-    title: "Crypto Base Scanner",
-    content: "QFL scanner",
-    imgSrc: CryptoBaseScannerBitcoin,
-  },
-  {
-    title: "Crypto Quick Scanner",
-    content: "Quick drop & rise alerts",
-    imgSrc: CryptoQuickScanner,
-  },
-  {
-    title: "Coindelist",
-    content: "Get notified when coins are being delisted",
-    imgSrc: Coindelist,
-  },
-  {
-    title: "Coinredact",
-    content: "Crypto news",
-    imgSrc: Coinredact,
-  },
-  {
-    title: "CoinRay",
-    content: "Multiple exchanges, one data stream API",
-    imgSrc: Coinray,
-  },
-]
-
-const footer = ({ exchangeData }) => {
+const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query Footer {
+      allPrismicExchanges(
+        sort: { order: ASC, fields: data___exchange_group___position }
+      ) {
+        nodes {
+          data {
+            exchange_group {
+              slug
+              name
+              icon {
+                url
+              }
+            }
+          }
+        }
+      }
+      allPrismicPartners {
+        nodes {
+          data {
+            partner_group {
+              name
+              icon {
+                url
+              }
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+  const exchangeData = data?.allPrismicExchanges.nodes[0].data.exchange_group
+  const partners = data.allPrismicPartners.nodes[0].data.partner_group
   const featureList = features.map((item, index) => (
     <div key={index}>
       <Link to="/"> {item} </Link>
@@ -69,19 +64,23 @@ const footer = ({ exchangeData }) => {
 
   const exchangeList = exchangeData?.map((item, index) => (
     <div key={index} className="d-flex align-items-center">
-      <img alt={item.title} src={item.exc_img.url} className="exchange-img" />
-      <Link to="/">{item.title}</Link>
+      <img alt={item.name} src={item.icon.url} className="exchange-img" />
+      <Link to={`exchange/${item.slug}`}>{item.name}</Link>
     </div>
   ))
 
   const partnerList = partners.map((item, index) => (
     <div key={index} className="feature-item ">
-      <img alt={item.title} src={item.imgSrc} className="feature-item__image" />
+      <img
+        alt={item.name}
+        src={item.icon.url}
+        className="feature-item__image"
+      />
       <div className="feature-item__content-wrapper">
         <Link to="/" className="feature-item_title">
-          {item.title}
+          {item.name}
         </Link>
-        <p className="label feature-item_content">{item.content}</p>
+        <p className="label feature-item_content">{item.description}</p>
       </div>
     </div>
   ))
@@ -148,4 +147,4 @@ const footer = ({ exchangeData }) => {
   )
 }
 
-export default footer
+export default Footer

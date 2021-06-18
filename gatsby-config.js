@@ -22,16 +22,11 @@ module.exports = {
       options: {
         repositoryName: "altrady",
         schemas: {
-          exchanges: require("./custom_types/exchange.json"),
-          sections: require("./custom_types/section.json"),
-          heroSection: require("./custom_types/hero_section.json"),
-          featureSection: require("./custom_types/feature_section.json"),
-          trustPilot: require("./custom_types/trustpilot_reviews.json"),
-          testimonial: require("./custom_types/testimonial.json"),
-          benoistTestimonial: require("./custom_types/benoist_testimonial.json"),
+          exchanges: require("./custom_types/exchanges.json"),
+          features: require("./custom_types/features.json"),
+          partners: require("./custom_types/partners.json"),
           blogPost: require("./custom_types/blog_post.json"),
           blogCategory: require("./custom_types/blog_category.json"),
-          softwareList: require("./custom_types/software_list.json"),
           courseCategory: require("./custom_types/course_category.json"),
           tutorial: require("./custom_types/tutorial.json"),
         },
@@ -51,7 +46,15 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/exchange/*`] },
+    },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/blog-detail/*`] },
+    },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/tutorial/*`] },
     },
     {
       resolve: `gatsby-plugin-create-client-paths`,

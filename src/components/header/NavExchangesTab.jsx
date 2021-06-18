@@ -9,11 +9,11 @@ const NavExchangesTab = ({ exchangeData }) => {
         <div className="nav-col">
           <h4 className="title">Supported exchanges</h4>
           <div className="exchange row">
-            {exchangeData?.map((item, idx) => (
+            {exchangeData?.map(({ name, slug, icon }, idx) => (
               <ExchangeItem
-                title={item.title}
-                content={item.content}
-                imgSrc={item.exc_img.url}
+                title={name}
+                slug={slug}
+                imgSrc={icon.url}
                 extraCls=" width-lg-20 col-sm-6"
                 key={idx}
               />

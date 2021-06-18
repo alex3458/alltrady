@@ -44,6 +44,8 @@ $z-header: 10;
 
 .section {
   padding: 120px 0;
+  box-shadow: inset 0px -1px 0px #ebf5ff;
+
   &-body {
     margin-top: 48px;
   }
@@ -483,6 +485,7 @@ span {
   margin-bottom: 24px;
   span.open-now {
     cursor: pointer;
+    text-decoration: underline;
   }
   h4.os {
     margin: 16px 0 8px;
@@ -740,7 +743,6 @@ span {
 }
 
 .trading-software {
-  background: $white;
   &__content {
     text-align: center;
     margin-top: 16px;

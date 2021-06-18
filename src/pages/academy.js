@@ -15,12 +15,10 @@ const courseTitle = "Courses:"
 const courseContent = `We believe it is important that you know what we’re building, and we’d love to hear your feedback and other feature requests.`
 
 const Academy = ({ data }) => {
-  const exchangeData =
-    data && data.allPrismicExchange.nodes[2].data.exchange_item
-  const categoryData = data && data.allPrismicCourseCategory.nodes
-  const tutorialData = data && data.allPrismicTutorial.nodes
+  const categoryData = data.allPrismicCourseCategory.nodes
+  const tutorialData = data.allPrismicTutorial.nodes
   return (
-    <AcademyPageLayout navData={exchangeData}>
+    <AcademyPageLayout>
       <Seo
         title="Altrady - Crypto Academy To Expand Your Trading Knowledge"
         description="Altrady brings to you his cryptocurrency academy to help beginners and more advanced crypto traders with their trading strategy."
@@ -68,19 +66,6 @@ export const query = graphql`
           name
           duration
           slug
-        }
-      }
-    }
-    allPrismicExchange {
-      nodes {
-        data {
-          exchange_item {
-            content
-            exc_img {
-              url
-            }
-            title
-          }
         }
       }
     }

@@ -5,8 +5,6 @@ import BlogDetailList from "../sections/blog-detail-list"
 
 const Category = ({ location, data }) => {
   const currentSlug = location.pathname.split("/")[2]
-  const exchangeData =
-    data && data.allPrismicExchange.nodes[2].data.exchange_item
   const categories = data && data.allPrismicBlogCategory.nodes
   const currentCatetgory =
     categories &&
@@ -18,7 +16,7 @@ const Category = ({ location, data }) => {
       item => item.data.category.id === prismicId
     )
   return (
-    <BlogPageLayout navData={exchangeData}>
+    <BlogPageLayout>
       <h1 className="category-name">
         {currentCatetgory[0] && currentCatetgory[0].data.category_name}
       </h1>
@@ -58,19 +56,6 @@ export const query = graphql`
           category_name
         }
         prismicId
-      }
-    }
-    allPrismicExchange {
-      nodes {
-        data {
-          exchange_item {
-            content
-            exc_img {
-              url
-            }
-            title
-          }
-        }
       }
     }
   }

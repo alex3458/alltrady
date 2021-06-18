@@ -12,10 +12,8 @@ const Blog = ({ data }) => {
     .filter(item => item.data.featured === true)
     .slice(0, 5)
   const categories = data.allPrismicBlogCategory.nodes
-  const exchangeData =
-    data && data.allPrismicExchange.nodes[2].data.exchange_item
   return (
-    <BlogPageLayout navData={exchangeData}>
+    <BlogPageLayout>
       <Seo
         title="Altrady Crypto Trading News"
         description="Altrady Crypto Trading News. Learn to crypto trade with our resources. Bitcoin and altcoins trading."
@@ -62,19 +60,6 @@ export const query = graphql`
           summary
           thumbnail {
             url
-          }
-        }
-      }
-    }
-    allPrismicExchange {
-      nodes {
-        data {
-          exchange_item {
-            content
-            exc_img {
-              url
-            }
-            title
           }
         }
       }

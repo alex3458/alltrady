@@ -15,49 +15,37 @@ import BestCryptorSection from "../sections/best-cryptor"
 import LevelUpCTASection from "../sections/level-up-cta"
 import TradingSoftwareSection from "../sections/trading-software"
 import Seo from "../components/seo"
+import {
+  heroSectionData,
+  benefitSection,
+  benefitSectionData,
+  featuresSection,
+  featuresListData,
+  reviewsData,
+  testimonials1,
+  testimonials2,
+  benoistTestimonial,
+  bestCryptorSection,
+  softwareListData,
+} from "../utils/staticData"
 
 export default function Home({ data }) {
-  const exchangeData = data.allPrismicExchange.nodes[2].data.exchange_item
-
-  const benefitSectionData = data.allPrismicExchange.nodes[0].data.exchange_item
-  const heroSectionData = data.allPrismicHeroSection.nodes[0].data
-
-  const benefitTitle = data.allPrismicSection.nodes[2].data.title
-  const benefitContent = data.allPrismicSection.nodes[2].data.content
-
-  const featuresListSectionTitle = data.allPrismicSection.nodes[0].data.title
-  const featuresListSectionContent =
-    data.allPrismicSection.nodes[0].data.content
-  const featuresListData =
-    data.allPrismicFeatureSection.nodes[0].data.feature_item
-
-  const reviewsData = data.allPrismicTrustpilotReviews.nodes[0].data
-
-  const testimonials1 = data.allPrismicTestimonial.nodes[1].data
-  const testimonials2 = data.allPrismicTestimonial.nodes[0].data
-  const benoistTestimonial = data.prismicBenoistTestimonial.data
-
-  const bestCryptorSectionTitle = data.allPrismicSection.nodes[1].data.title
-  const bestCryptorSectionContent = data.allPrismicSection.nodes[1].data.content
-
-  const bestCryptorSectionData = data.allPrismicBlogPostApi.nodes
   const blogCategories = data.allPrismicBlogCategory.nodes
-
-  const softwareListData = data.allPrismicSoftwareList.nodes[0].data
-
+  const bestCryptorSectionData = data.allPrismicBlogPostApi.nodes.slice(0, 8)
+  const exchangeData = data?.allPrismicExchanges.nodes[0].data.exchange_group
   return (
-    <LandingPageLayout navData={data.allPrismicExchange.nodes}>
+    <LandingPageLayout>
       <Seo title="Altrady Crypto Trading Software is Fast, Easy & Secure" />
       <HeroSection heroSectionData={heroSectionData} />
       <ExchangeSection exchangeData={exchangeData} />
       <BenefitSection
-        title={benefitTitle}
-        content={benefitContent}
+        title={benefitSection.title}
+        content={benefitSection.content}
         benefitSectionData={benefitSectionData}
       />
       <FeaturesListSection
-        title={featuresListSectionTitle}
-        content={featuresListSectionContent}
+        title={featuresSection.title}
+        content={featuresSection.content}
         featuresListData={featuresListData}
       />
       <ReviewsSection {...reviewsData} />
@@ -67,8 +55,8 @@ export default function Home({ data }) {
       <FeatureCTASection />
       <PeopleSayingSection3 {...benoistTestimonial} />
       <BestCryptorSection
-        title={bestCryptorSectionTitle}
-        content={bestCryptorSectionContent}
+        title={bestCryptorSection.title}
+        content={bestCryptorSection.content}
         categories={blogCategories}
         data={bestCryptorSectionData}
       />
@@ -80,91 +68,19 @@ export default function Home({ data }) {
 
 export const query = graphql`
   query Home {
-    allPrismicExchange {
+    allPrismicExchanges(
+      sort: { order: ASC, fields: data___exchange_group___position }
+    ) {
       nodes {
         data {
-          exchange_item {
-            content
-            exc_img {
-              url
-            }
-            title
-          }
-        }
-      }
-    }
-    allPrismicHeroSection {
-      nodes {
-        data {
-          content
-          description
-          header
-          kicker
-          img {
-            url
-          }
-        }
-      }
-    }
-    allPrismicSection {
-      nodes {
-        data {
-          content
-          title
-        }
-      }
-    }
-    allPrismicFeatureSection {
-      nodes {
-        data {
-          feature_item {
-            content
-            img {
-              url
-            }
-            kicker
-            title
-          }
-        }
-      }
-    }
-    allPrismicTrustpilotReviews {
-      nodes {
-        data {
-          content
-          title
-          review_item {
-            marks
-            review
-            username
-          }
-        }
-      }
-    }
-    allPrismicTestimonial {
-      nodes {
-        data {
-          content
-          title
-          testimonial {
-            content1
-            title1
-            img {
+          exchange_group {
+            slug
+            name
+            partner
+            icon {
               url
             }
           }
-        }
-      }
-    }
-    prismicBenoistTestimonial {
-      data {
-        content
-        position
-        testimonial
-        title
-        username
-        img {
-          url
         }
       }
     }
@@ -201,21 +117,6 @@ export const query = graphql`
           meta_title
         }
         prismicId
-      }
-    }
-    allPrismicSoftwareList {
-      nodes {
-        data {
-          title
-          software_item {
-            cta_text
-            img {
-              url
-            }
-            os
-            os_description
-          }
-        }
       }
     }
   }

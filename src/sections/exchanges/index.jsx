@@ -7,11 +7,12 @@ const ExchangeSection = ({ extraCls = "", exchangeData }) => {
     <SectionLayout sectionName={"exchanges " + extraCls}>
       <div className="exchanges-item__container">
         <div className="first-line d-flex row">
-          {exchangeData?.map(({ title, exc_img }, idx) => (
+          {exchangeData?.map(({ name, slug, icon }, idx) => (
             <ExchangeItem
-              title={title}
               key={idx}
-              imgSrc={exc_img.url}
+              title={name}
+              slug={slug}
+              imgSrc={icon.url}
               extraCls=" width-sm-20"
             />
           ))}

@@ -1,10 +1,10 @@
-import React from "react"
 import { Link } from "gatsby"
+import React from "react"
 
-const ExchangeItem = ({ title, content, slug, imgSrc, extraCls = "" }) => {
+const NavExchangeItem = ({ title, content, imgSrc, slug }) => {
   return (
-    <Link to={`/exchange/${slug}`} className={"link-non-effect" + extraCls}>
-      <div className="feature-item">
+    <Link to={`/exchange/${slug}`} className="link-non-effect">
+      <div className="feature-item col-sm-6 col-lg-12">
         <img alt={title} src={imgSrc} className="feature-item__image" />
         <div className="feature-item__content-wrapper">
           <h5 className="feature-item_title">{title}</h5>
@@ -15,4 +15,4 @@ const ExchangeItem = ({ title, content, slug, imgSrc, extraCls = "" }) => {
   )
 }
 
-export default ExchangeItem
+export default NavExchangeItem

@@ -8,8 +8,6 @@ import { graphql } from "gatsby"
 
 const Course = ({ location, data }) => {
   const currentSlug = location.pathname.split("/")[2]
-  const exchangeData =
-    data && data.allPrismicExchange.nodes[2].data.exchange_item
   const categoryData =
     data &&
     data.allPrismicCourseCategory.nodes.filter(
@@ -22,7 +20,7 @@ const Course = ({ location, data }) => {
       item => item.data.category.id === courseId
     )
   return (
-    <AcademyPageLayout navData={exchangeData}>
+    <AcademyPageLayout>
       <Seo
         title="Altrady - Crypto Academy To Expand Your Trading Knowledge"
         description="Altrady brings to you his cryptocurrency academy to help beginners and more advanced crypto traders with their trading strategy."
@@ -70,19 +68,6 @@ export const query = graphql`
           name
           duration
           slug
-        }
-      }
-    }
-    allPrismicExchange {
-      nodes {
-        data {
-          exchange_item {
-            content
-            exc_img {
-              url
-            }
-            title
-          }
         }
       }
     }

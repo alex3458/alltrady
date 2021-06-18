@@ -16,7 +16,6 @@ import {
 } from "../utils/imgLoader"
 import FeatureCTASection from "../sections/feature-cta"
 import JoinNowSection from "../sections/join-now"
-import { graphql } from "gatsby"
 
 const headerContent = `Easy & Simple Trading Platform For Higher Profits `
 const sectionContent = `Get the power to trade and manage coins from many exchanges in one app.
@@ -47,9 +46,9 @@ Our tools and technology give you the easiest way to manage your trades and port
     imgSrc: FundSecurity,
   },
 ]
-const WhyAltrady = ({ data }) => {
+const WhyAltrady = () => {
   return (
-    <LandingPageLayout navData={data.allPrismicExchange.nodes}>
+    <LandingPageLayout>
       <HeroComponent
         clsName="section hero why-altrady"
         headerContent={headerContent}
@@ -78,21 +77,5 @@ const WhyAltrady = ({ data }) => {
     </LandingPageLayout>
   )
 }
-export const query = graphql`
-  query WhyAltrady {
-    allPrismicExchange {
-      nodes {
-        data {
-          exchange_item {
-            content
-            exc_img {
-              url
-            }
-            title
-          }
-        }
-      }
-    }
-  }
-`
+
 export default WhyAltrady

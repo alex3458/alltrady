@@ -1,16 +1,14 @@
 import React from "react"
-import { graphql } from "gatsby"
 import LandingPageLayout from "../layouts/LandingPageLayout"
 import HeroSection from "../sections/hero"
 import AllFeatures from "../sections/all-features"
 import LevelUpCTASection from "../sections/level-up-cta"
 import TradingSoftwareSection from "../sections/trading-software"
+import { softwareListData } from "../utils/staticData"
 
-export default function Features({ data }) {
-  const softwareListData = data.allPrismicSoftwareList.nodes[0].data
-
+export default function Features() {
   return (
-    <LandingPageLayout navData={data.allPrismicExchange.nodes}>
+    <LandingPageLayout>
       <HeroSection extraClsName="light-bk" />
       <AllFeatures />
       <LevelUpCTASection />
@@ -18,36 +16,3 @@ export default function Features({ data }) {
     </LandingPageLayout>
   )
 }
-
-export const query = graphql`
-  query Features {
-    allPrismicExchange {
-      nodes {
-        data {
-          exchange_item {
-            title
-            content
-            exc_img {
-              url
-            }
-          }
-        }
-      }
-    }
-    allPrismicSoftwareList {
-      nodes {
-        data {
-          title
-          software_item {
-            cta_text
-            img {
-              url
-            }
-            os
-            os_description
-          }
-        }
-      }
-    }
-  }
-`

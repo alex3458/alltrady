@@ -1,17 +1,17 @@
 import React from "react"
 import NavFeatureItem from "../common/NavFeatureItem"
 
-const NavDropdownFeatureColumn = ({ title, content }) => {
+const NavDropdownResourceColumn = ({ title, content }) => {
   return (
     <div className="col-lg-4 nav-col">
       <h4 className="title">{title}</h4>
       <div className="row flex-column">
         {content &&
-          content.map(({ name, description, icon }, idx) => (
+          content.map(({ title, content, exc_img }, idx) => (
             <NavFeatureItem
-              title={name}
-              content={description}
-              imgSrc={icon.url}
+              title={title}
+              content={content}
+              imgSrc={exc_img.url}
               key={idx}
             />
           ))}
@@ -20,4 +20,4 @@ const NavDropdownFeatureColumn = ({ title, content }) => {
   )
 }
 
-export default NavDropdownFeatureColumn
+export default NavDropdownResourceColumn

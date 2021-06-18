@@ -1,35 +1,18 @@
 import React from "react"
 import LandingPageLayout from "../layouts/LandingPageLayout"
 import DownloadHeroSection from "../sections/download-hero"
-import DownloadTradingSoftwareSection from "../sections/download-trading-software"
+import TradingSoftwareSection from "../sections/trading-software"
 import FeatureCTASection from "../sections/feature-cta"
-import { graphql } from "gatsby"
+import { softwareListData } from "../utils/staticData"
 
 const Download = ({ data }) => {
   return (
-    <LandingPageLayout navData={data.allPrismicExchange.nodes}>
+    <LandingPageLayout>
       <DownloadHeroSection />
-      <DownloadTradingSoftwareSection />
+      <TradingSoftwareSection {...softwareListData} />
       <FeatureCTASection />
     </LandingPageLayout>
   )
 }
 
-export const query = graphql`
-  query Download {
-    allPrismicExchange {
-      nodes {
-        data {
-          exchange_item {
-            content
-            exc_img {
-              url
-            }
-            title
-          }
-        }
-      }
-    }
-  }
-`
 export default Download

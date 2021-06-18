@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Logo } from "../../utils/imgLoader"
 import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import "../style.scss"
 import LinkSecondBtn from "../common/LinkSecondBtn"
 import LinkPrimaryBtn from "../common/LinkPrimaryBtn"
@@ -8,15 +9,88 @@ import NavFeatureTab from "./NavFeatureTab"
 import NavExchangesTab from "./NavExchangesTab"
 import NavResourcesTab from "./NavResourcesTab"
 import BodyClassName from "react-body-classname"
+import { navResourceResourceData } from "../../utils/staticData"
 
-const Header = ({ navData }) => {
-  const exchangeData = navData[2].data.exchange_item
-  const navFeatureAnalyzeData = navData[1].data.exchange_item
-  const navResourceExchangeData = navData[3].data.exchange_item
-  const navResourceResourceData = navData[4].data.exchange_item
-  const navFeatureExcuteData = navData[5].data.exchange_item
-  const navFeatureDiscoverData = navData[6].data.exchange_item
-  const navResourcePartnerData = navData[7].data.exchange_item
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query Header {
+      allPrismicPartners {
+        nodes {
+          data {
+            partner_group {
+              name
+              icon {
+                url
+              }
+              description
+            }
+          }
+        }
+      }
+      allPrismicExchanges(
+        sort: { order: ASC, fields: data___exchange_group___position }
+      ) {
+        nodes {
+          data {
+            exchange_group {
+              slug
+              name
+              partner
+              icon {
+                url
+              }
+            }
+          }
+        }
+      }
+      allPrismicFeatureType {
+        nodes {
+          prismicId
+        }
+      }
+      allPrismicFeatures(
+        sort: { order: ASC, fields: data___feature_group___priority }
+      ) {
+        nodes {
+          data {
+            feature_group {
+              name
+              description
+              type {
+                id
+              }
+              featured_in_navbar
+              icon {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const exchangeData = data?.allPrismicExchanges.nodes[0].data.exchange_group
+  const navResourceExchangeData = exchangeData?.filter(
+    item => item.partner === true
+  )
+
+  const featureType = data.allPrismicFeatureType.nodes
+  const featureData = data.allPrismicFeatures.nodes[0].data.feature_group.filter(
+    item => item.featured_in_navbar === true
+  )
+  const navFeatureDiscoverData = featureData.filter(
+    item => item.type.id === featureType[0].prismicId
+  )
+  const navFeatureExcuteData = featureData.filter(
+    item => item.type.id === featureType[2].prismicId
+  )
+  const navFeatureAnalyzeData = featureData.filter(
+    item => item.type.id === featureType[1].prismicId
+  )
+
+  const navResourcePartnerData =
+    data.allPrismicPartners.nodes[0].data.partner_group
 
   const [hambugerActive, setHambugerActiveState] = useState(false)
   const [navMenuShow, setNavMenuShow] = useState(["", "", ""])
@@ -87,8 +161,8 @@ const Header = ({ navData }) => {
                     <span />
                   </Link>
                   <NavFeatureTab
-                    navFeatureExcuteData={navFeatureExcuteData}
                     navFeatureDiscoverData={navFeatureDiscoverData}
+                    navFeatureExcuteData={navFeatureExcuteData}
                     navFeatureAnalyzeData={navFeatureAnalyzeData}
                   />
                 </li>
