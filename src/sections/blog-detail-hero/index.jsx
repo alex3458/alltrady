@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const BlogDetailHero = ({ blogData, categories }) => {
   const data = blogData ? blogData.data : null
-  const categoryId = data && data.category.id
+  const categoryId = data?.category.id
   let color = "green"
   let type = "test"
   let slug = "crypto-trading"

@@ -24,17 +24,14 @@ const features = [
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query Footer {
-      allPrismicExchanges(
-        sort: { order: ASC, fields: data___exchange_group___position }
-      ) {
+      allPrismicExchanges(sort: { order: ASC, fields: data___position }) {
         nodes {
           data {
-            exchange_group {
-              slug
-              name
-              icon {
-                url
-              }
+            name
+            slug
+            upcoming
+            icon {
+              url
             }
           }
         }
@@ -54,7 +51,9 @@ const Footer = () => {
       }
     }
   `)
-  const exchangeData = data?.allPrismicExchanges.nodes[0].data.exchange_group
+  const exchangeData = data?.allPrismicExchanges.nodes.filter(
+    item => item.data.upcoming === false
+  )
   const partners = data.allPrismicPartners.nodes[0].data.partner_group
   const featureList = features.map((item, index) => (
     <div key={index}>
@@ -64,8 +63,12 @@ const Footer = () => {
 
   const exchangeList = exchangeData?.map((item, index) => (
     <div key={index} className="d-flex align-items-center">
-      <img alt={item.name} src={item.icon.url} className="exchange-img" />
-      <Link to={`exchange/${item.slug}`}>{item.name}</Link>
+      <img
+        alt={item.data.name}
+        src={item.data.icon.url}
+        className="exchange-img"
+      />
+      <Link to={`/exchange/${item.data.slug}`}>{item.data.name}</Link>
     </div>
   ))
 

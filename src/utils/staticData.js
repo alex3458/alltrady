@@ -21,7 +21,7 @@ export const benefitSectionData = [
     title: "All-in-one trading platform",
     content:
       "With Altrady, you are at a huge advantage!\nOur tools and technology give you the easiest way to manage your trades and portfolio.",
-    exc_img: {
+    image: {
       url:
         "https://altrady.cdn.prismic.io/altrady/9013621d-3a1f-41ca-8c54-3f6dbbff022a_trading-platform.svg",
     },
@@ -30,7 +30,7 @@ export const benefitSectionData = [
     title: "Fast & powerful technology",
     content:
       "Make the right trading actions with speed and reliability! Altrady's innovative technology lets you react to changing markets with accuracy and efficiency.",
-    exc_img: {
+    image: {
       url:
         "https://altrady.cdn.prismic.io/altrady/7df34a92-4157-4105-aea4-afd4bb197cd9_fast-powerful-technology.svg",
     },
@@ -39,7 +39,7 @@ export const benefitSectionData = [
     title: "100% fund security",
     content:
       "Altrady uses state-of-the-art encryption to safely store you API keys on the servers.",
-    exc_img: {
+    image: {
       url:
         "https://altrady.cdn.prismic.io/altrady/2cd921c7-4b45-4e00-8fce-b637e2930b8f_found-security.svg",
     },
@@ -48,7 +48,7 @@ export const benefitSectionData = [
     title: "Fully customizable",
     content:
       "Customize your dashboard and configure alerts based on your trading goals and strategies.",
-    exc_img: {
+    image: {
       url:
         "https://altrady.cdn.prismic.io/altrady/34b84567-5852-4ec0-a5f5-8bba0e6a5208_full-customizable.svg",
     },
@@ -57,7 +57,7 @@ export const benefitSectionData = [
     title: "Learn trading with experts",
     content:
       "Grow your crypto knowledge and boost your trading experience with the help of experts from the Altrady community!",
-    exc_img: {
+    image: {
       url:
         "https://altrady.cdn.prismic.io/altrady/b6690804-af4c-4db5-b5ca-b9ede14c385b_learn-trading.svg",
     },
@@ -66,7 +66,7 @@ export const benefitSectionData = [
     title: "Real-time alerts",
     content:
       "Get immediate notifications and real-time crypto alerts powered by our unique algorithms and websockets connection.",
-    exc_img: {
+    image: {
       url:
         "https://altrady.cdn.prismic.io/altrady/89c97cfa-bd1a-415c-9ac2-665ec69136a5_real-time-alert.svg",
     },

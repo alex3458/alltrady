@@ -1,36 +1,44 @@
 {
-  "Main" : {
-    "category" : {
-      "type" : "Link",
-      "config" : {
-        "select" : "document",
-        "customtypes" : [ "course_category" ],
-        "label" : "Category"
+  "Main": {
+    "category": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": [
+          "course_category"
+        ],
+        "label": "Category"
       }
     },
-    "name" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Name"
+    "name": {
+      "type": "Text",
+      "config": {
+        "label": "Name"
       }
     },
-    "description" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-        "label" : "Description"
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "Description"
       }
     },
-    "duration" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Duration"
+    "duration": {
+      "type": "Text",
+      "config": {
+        "label": "Duration"
       }
     },
-    "video_embed" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Video embed"
+    "video_embed": {
+      "type": "Text",
+      "config": {
+        "label": "Video embed"
+      }
+    },
+    "slug": {
+      "type": "Text",
+      "config": {
+        "label": "Slug"
       }
     }
   }

@@ -51,6 +51,9 @@ Our tools and technology give you the easiest way to manage your trades and port
     imgSrc: RealTimeAlerts,
   },
 ]
+const title = `Level Up Now`
+const description = `Overwhelmed with the complexity of the cryptocurrency world?
+Bring your trading experience to another level with the power of cryptocurrency trading software Altrady, your best bitcoin trading platform choice`
 
 export default function Feature() {
   return (
@@ -62,7 +65,11 @@ export default function Feature() {
         content={benefitContent}
         benefitSectionData={benefitSectionData}
       />
-      <LevelUpCTASection />
+      <LevelUpCTASection
+        title={title}
+        description={description}
+        button="Try for free"
+      />
       <TradingSoftwareSection {...softwareListData} />
     </LandingPageLayout>
   )

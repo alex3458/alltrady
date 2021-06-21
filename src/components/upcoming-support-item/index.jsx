@@ -1,14 +1,14 @@
 import React from "react"
 
-const UpcomingSupportItem = ({ imgSrc, title, content }) => {
+const UpcomingSupportItem = ({ name, icon, short_description, slug }) => {
   return (
     <div className="col-lg-6">
       <div className="item">
         <div className="d-flex">
-          <img alt={title} src={imgSrc} className="item__img" />
-          <h4 className="item__title d-flex align-items-center">{title}</h4>
+          <img alt={name} src={icon.url} className="item__img" />
+          <h4 className="item__title d-flex align-items-center">{name}</h4>
         </div>
-        <p className="item__content">{content}</p>
+        <p className="item__content">{short_description}</p>
       </div>
     </div>
   )

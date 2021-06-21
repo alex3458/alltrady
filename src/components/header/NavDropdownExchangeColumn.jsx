@@ -7,11 +7,11 @@ const NavDropdownExchangeColumn = ({ title, content }) => {
       <h4 className="title">{title}</h4>
       <div className="row flex-column">
         {content &&
-          content.map(({ name, icon, slug }, idx) => (
+          content.map((item, idx) => (
             <NavExchangeItem
-              title={name}
-              imgSrc={icon.url}
-              slug={slug}
+              title={item.data.name}
+              imgSrc={item.data.icon.url}
+              slug={item.data.slug}
               key={idx}
             />
           ))}

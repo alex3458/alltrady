@@ -27,25 +27,17 @@ const Header = () => {
           }
         }
       }
-      allPrismicExchanges(
-        sort: { order: ASC, fields: data___exchange_group___position }
-      ) {
+      allPrismicExchanges(sort: { order: ASC, fields: data___position }) {
         nodes {
           data {
-            exchange_group {
-              slug
-              name
-              partner
-              icon {
-                url
-              }
+            name
+            slug
+            upcoming
+            icon {
+              url
             }
+            partner
           }
-        }
-      }
-      allPrismicFeatureType {
-        nodes {
-          prismicId
         }
       }
       allPrismicFeatures(
@@ -56,10 +48,8 @@ const Header = () => {
             feature_group {
               name
               description
-              type {
-                id
-              }
               featured_in_navbar
+              type
               icon {
                 url
               }
@@ -70,23 +60,24 @@ const Header = () => {
     }
   `)
 
-  const exchangeData = data?.allPrismicExchanges.nodes[0].data.exchange_group
+  const exchangeData = data?.allPrismicExchanges.nodes.filter(
+    item => item.data.upcoming === false
+  )
   const navResourceExchangeData = exchangeData?.filter(
-    item => item.partner === true
+    item => item.data.partner === true
   )
 
-  const featureType = data.allPrismicFeatureType.nodes
   const featureData = data.allPrismicFeatures.nodes[0].data.feature_group.filter(
     item => item.featured_in_navbar === true
   )
   const navFeatureDiscoverData = featureData.filter(
-    item => item.type.id === featureType[0].prismicId
+    item => item.type === "Discover"
   )
   const navFeatureExcuteData = featureData.filter(
-    item => item.type.id === featureType[2].prismicId
+    item => item.type === "Execute"
   )
   const navFeatureAnalyzeData = featureData.filter(
-    item => item.type.id === featureType[1].prismicId
+    item => item.type === "Analyze"
   )
 
   const navResourcePartnerData =

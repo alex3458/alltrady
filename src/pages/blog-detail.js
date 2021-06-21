@@ -8,13 +8,13 @@ import Seo from "../components/seo"
 
 const BlogDetail = ({ location, data }) => {
   const currentSlug = location.pathname.split("/")[2]
-  const blogData = data.allPrismicBlogPostApi.nodes
-  const currentBlog =
-    blogData && blogData.filter(item => item.data.slug === currentSlug)
-  const categories = data.allPrismicBlogCategory.nodes
-  const features =
-    blogData && blogData.filter(item => item.data.featured === true).slice(0, 5)
-  const moreBlog = blogData && blogData.slice(0, 8)
+  const blogData = data?.allPrismicBlogPostApi.nodes
+  const currentBlog = blogData.filter(item => item.data.slug === currentSlug)
+  const categories = data?.allPrismicBlogCategory.nodes
+  const features = blogData
+    .filter(item => item.data.featured === true)
+    .slice(0, 5)
+  const moreBlog = blogData.slice(0, 8)
   return (
     <BlogPageLayout>
       <Seo

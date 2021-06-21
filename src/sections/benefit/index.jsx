@@ -8,8 +8,8 @@ const BenefitSection = ({ title, content, benefitSectionData }) => {
     <SectionLayout sectionName="benefit">
       <SectionHeader title={title} content={content} />
       <div className="row item-container">
-        {benefitSectionData.map((item, idx) => (
-          <BenefitItem key={idx} {...item} imgSrc={item.exc_img?.url} />
+        {benefitSectionData?.map((item, idx) => (
+          <BenefitItem key={idx} {...item} />
         ))}
       </div>
     </SectionLayout>

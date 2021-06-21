@@ -7,25 +7,21 @@ import { graphql } from "gatsby"
 
 const Tutorial = ({ location, data }) => {
   const currentSlug = location.pathname.split("/")[2]
-  const tutorialData =
-    data &&
-    data.allPrismicTutorial.nodes.filter(item => item.data.slug === currentSlug)
+  const tutorialData = data?.allPrismicTutorial.nodes.filter(
+    item => item.data.slug === currentSlug
+  )
   const currentTutorial = tutorialData[0] && tutorialData[0].data
 
   const categoryId = tutorialData[0] && tutorialData[0].data.category.id
-  const currentCategory =
-    data &&
-    data.allPrismicCourseCategory.nodes.filter(
-      item => item.prismicId === categoryId
-    )
+  const currentCategory = data?.allPrismicCourseCategory.nodes.filter(
+    item => item.prismicId === categoryId
+  )
   const categorySlug = currentCategory[0] && currentCategory[0].data.slug
   const categoryName = currentCategory[0] && currentCategory[0].data.name
 
-  const tutorialList =
-    data &&
-    data.allPrismicTutorial.nodes.filter(
-      item => item.data.category.id === categoryId
-    )
+  const tutorialList = data?.allPrismicTutorial.nodes.filter(
+    item => item.data.category.id === categoryId
+  )
 
   return (
     <AcademyPageLayout>

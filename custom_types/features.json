@@ -1,0 +1,54 @@
+{
+  "Main" : {
+    "feature_group" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "icon" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : { },
+              "thumbnails" : [ ],
+              "label" : "Icon"
+            }
+          },
+          "name" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Name"
+            }
+          },
+          "priority" : {
+            "type" : "Number",
+            "config" : {
+              "label" : "Priority"
+            }
+          },
+          "featured_in_navbar" : {
+            "type" : "Boolean",
+            "config" : {
+              "default_value" : false,
+              "label" : "Featured in navbar"
+            }
+          },
+          "description" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Description"
+            }
+          },
+          "type" : {
+            "type" : "Select",
+            "config" : {
+              "options" : [ "Discover", "Execute", "Analyze" ],
+              "default_value" : "Discover",
+              "label" : "Type",
+              "placeholder" : "Discover"
+            }
+          }
+        },
+        "label" : "Feature Group"
+      }
+    }
+  }
+}
