@@ -103,6 +103,7 @@ $z-header: 10;
   }
   &-content {
     color: $secondary;
+    font-size: 18px;
     white-space: pre-wrap;
     @include mq("phone-wide", max) {
       white-space: unset;
@@ -316,6 +317,42 @@ $z-header: 10;
       @include mq("tablet", max) {
         margin-top: 24px;
       }
+    }
+  }
+  &.member {
+    .explain-item {
+      display: flex;
+      text-align: left;
+      align-items: center;
+      margin-bottom: 24px;
+      @include mq("phone", max) {
+        display: block;
+      }
+    }
+  }
+  &.upcoming {
+    background: $light-blue-bk;
+    .row {
+      h3 {
+        margin-bottom: 24px;
+        @include mq("tablet-wide", max) {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+  .comeup-item {
+    padding: 24px;
+    margin-bottom: 8px;
+    background: white;
+    border: 1px solid #eff2f7;
+    border-radius: 4px;
+    .quarter-year {
+      font-size: 12px;
+      color: rgba(13, 23, 42, 0.64);
+    }
+    &-text {
+      color: rgba(13, 23, 42, 0.64);
     }
   }
 }
@@ -965,4 +1002,12 @@ span {
   width: calc(100vw - 50px);
   margin: 0 auto;
   text-align: left;
+}
+
+.benefit-item__content {
+  font-size: 18px;
+}
+
+.bg-blue {
+  background-color: $blue !important;
 }

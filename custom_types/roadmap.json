@@ -1,0 +1,45 @@
+{
+  "Main": {
+    "comeup_group": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "name": {
+            "type": "Text",
+            "config": {
+              "label": "Name"
+            }
+          },
+          "description": {
+            "type": "Text",
+            "config": {
+              "label": "Description"
+            }
+          },
+          "quarter_year": {
+            "type": "Text",
+            "config": {
+              "label": "Quarter Year"
+            }
+          },
+          "status": {
+            "type": "Select",
+            "config": {
+              "options": [
+                "Backlog",
+                "Development",
+                "Researching",
+                "Released",
+                "Canceled"
+              ],
+              "default_value": "Backlog",
+              "label": "Status",
+              "placeholder": "Backlog"
+            }
+          }
+        },
+        "label": "Comeup Group"
+      }
+    }
+  }
+}

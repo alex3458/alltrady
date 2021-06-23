@@ -61,7 +61,8 @@ Be successful now with Altrady's crypto trading software for beginners.`,
 ]
 const benefitSection = {
   title: "Innovative Crypto Tools For Beginners.",
-  content: `The beginning stages of crypto trading can make you question the correctness of your decisions. This stems from the possibility of not completely understanding the behavior of markets and of not having your own fully developed strategy. Altrady crypto trading software for beginners, makes crypto market analysis less complicated. By using our tools, you can have the right information to guide your decision-making process and help you craft the best strategy according to your own goals.`,
+  content: `The beginning stages of crypto trading can make you question the correctness of your decisions. This stems from the possibility of not completely understanding the behavior of markets and of not having your own fully developed strategy. Altrady crypto trading software for beginners, makes crypto market analysis less complicated. 
+By using our tools, you can have the right information to guide your decision-making process and help you craft the best strategy according to your own goals.`,
 }
 const benefitSectionData = [
   {
@@ -118,7 +119,7 @@ const explainData = [
 ]
 export default function Beginner() {
   const explainList = explainData.map((item, idx) => (
-    <div key={idx} className="d-flex text-left align-items-center mb-4">
+    <div key={idx} className="explain-item">
       <div className="circle-num">{idx + 1}</div>
       <div className="explain">
         <h4>{item.title}</h4>

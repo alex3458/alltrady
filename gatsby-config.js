@@ -6,10 +6,25 @@ module.exports = {
     title: `Trade Bitcoin`,
     description: `Trade Bitcoin, Altcoins and Etherum with Altrady - All-In-One Multi-Exchange Cryptocurrency Trading Platform.Crypto Community Help. Crypto Trading Software Made Fast and Simple!`,
     keywords: `altrady, bitcoin, website, crypto, trading, cryptocurrency, exchange, platform`,
+    siteUrl: `https://altrady.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://altrady.netlify.app/",
+        sitemap: "https://altrady.netlify.app/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     {
       resolve: `gatsby-plugin-resolve-src`,
       oprions: {
@@ -29,6 +44,7 @@ module.exports = {
           blogCategory: require("./custom_types/blog_category.json"),
           courseCategory: require("./custom_types/course_category.json"),
           tutorial: require("./custom_types/tutorial.json"),
+          roadmap: require("./custom_types/roadmap.json"),
         },
       },
     },

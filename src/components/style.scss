@@ -508,7 +508,11 @@ $z-header: 10;
     }
   }
   &-normal {
-    background-color: $white;
+    background-color: $white !important;
+    color: black;
+    &:hover {
+      color: black;
+    }
   }
 }
 .nav-col {
