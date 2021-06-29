@@ -29,14 +29,12 @@ const TutorialSection = ({
       <div className="row">
         <div className="col-lg-8 col-sm-12">
           <div className="video-details">
-            <h1 className="video-name-video">
-              {currentTutorial && currentTutorial.name}
-            </h1>
+            <h1 className="video-name-video">{currentTutorial?.name}</h1>
             <div className="html-embed w-embed">
               <div className="wrapper">
                 <div
                   className="youtube"
-                  data-embed={currentTutorial && currentTutorial.video_embed}
+                  data-embed={currentTutorial?.video_embed}
                   onClick={showVideo}
                   onKeyDown={showVideo}
                   role="button"
@@ -45,13 +43,11 @@ const TutorialSection = ({
                 >
                   {play ? (
                     <iframe
-                      title={currentTutorial && currentTutorial.name}
+                      title={currentTutorial?.name}
                       frameBorder="0"
                       allowFullScreen
                       allow="autoplay"
-                      src={`https://www.youtube.com/embed/${
-                        currentTutorial && currentTutorial.video_embed
-                      }?rel=0&amp;showinfo=0&amp;autoplay=1&mute=1`}
+                      src={`https://www.youtube.com/embed/${currentTutorial?.video_embed}?rel=0&amp;showinfo=0&amp;autoplay=1&mute=1`}
                     ></iframe>
                   ) : (
                     <>
@@ -64,10 +60,8 @@ const TutorialSection = ({
                         aria-label="Play Button"
                       ></div>
                       <img
-                        src={`https://img.youtube.com/vi/${
-                          currentTutorial && currentTutorial.video_embed
-                        }/sddefault.jpg`}
-                        alt="tutorial video"
+                        src={`https://img.youtube.com/vi/${currentTutorial?.video_embed}/sddefault.jpg`}
+                        alt={currentTutorial?.name}
                       />
                     </>
                   )}
@@ -77,7 +71,7 @@ const TutorialSection = ({
             <div className="tutorial-content">
               <h3>Tutorial Description</h3>
               <RichText
-                render={currentTutorial && currentTutorial.description.raw}
+                render={currentTutorial?.description.raw}
                 serializeHyperlink={htmlSerializer}
               />
             </div>

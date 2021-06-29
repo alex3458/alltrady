@@ -164,8 +164,8 @@ export const reviewsData = {
 }
 export const testimonials1 = {
   title: "See What People Are Saying About Altrady!",
-  content:
-    "Professional traders prefer not to share their photos and names in crypto world.\nBut you can definitely find them in Altrady community.",
+  content: `Professional traders prefer not to share their photos and names in crypto world.
+    But you can definitely find them in Altrady community.`,
   testimonial: [
     {
       content1:
@@ -226,6 +226,30 @@ export const testimonials2 = {
       img: {
         url:
           "https://altrady.cdn.prismic.io/altrady/18b81772-4719-4038-a717-6ab848f2662d_academy-types3.svg",
+      },
+    },
+  ],
+}
+export const testimonials3 = {
+  title: "Altrady's Notes Widgets Serves as Your Integrated Trading Journal",
+  content: `Both Altrady and Coinigy have crypto market scanners that can automatically monitor thousands of cryptocurrency markets 24/7. However, what is unique to Altrady is its specialized crypto scanners called the Crypto Base Scanner and Quick Scanner.`,
+  testimonial: [
+    {
+      content1:
+        "Best alternative to Hypertrader!\nVisualisation of trades works great, it's intuitive to use, alerts work well cross platform, updating trades is very easy",
+      title1: "Review1",
+      img: {
+        url:
+          "https://altrady.cdn.prismic.io/altrady/195e8618-7e5e-4887-8ae6-56dde853c45f_testimonial-person1.svg",
+      },
+    },
+    {
+      content1:
+        "This crypto trading platform is evolving nicely and going to avoid us having memberships with the likes of tradingview and coinigy etc. The fact that there's ongoing development to improve our overall trading experience means we can look forward to a bright future with Altrady",
+      title1: "Review2",
+      img: {
+        url:
+          "https://altrady.cdn.prismic.io/altrady/a3bdcdf6-7eff-4581-91db-66253e0dd34d_testimonial-person2.svg",
       },
     },
   ],

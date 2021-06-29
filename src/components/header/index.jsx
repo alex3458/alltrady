@@ -47,6 +47,7 @@ const Header = () => {
           data {
             feature_group {
               name
+              slug
               description
               featured_in_navbar
               type

@@ -4,11 +4,10 @@ import BlogListItem from "../../components/blog-list-item"
 import htmlSerializer from "../../utils/htmlSerializer"
 
 const BlogDetailContentSection = ({ content, features }) => {
-  const renderData = content && content.data.content
   return (
     <div className="blog-detail-content row">
       <div className="col-lg-8">
-        <RichText render={renderData} serializeHyperlink={htmlSerializer} />
+        <RichText render={content} serializeHyperlink={htmlSerializer} />
       </div>
       <div className="col-lg-4">
         <h4 className="features-blogs tablet-hide">Features Blogs</h4>

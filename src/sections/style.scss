@@ -749,7 +749,7 @@ span {
 }
 
 .exchange-detail {
-  background: $primary;
+  background: $primary !important;
   color: $white;
   .item {
     &__img {
@@ -1010,4 +1010,40 @@ span {
 
 .bg-blue {
   background-color: $blue !important;
+}
+
+.back__link {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  &:hover {
+    color: white;
+  }
+}
+
+.back-img {
+  padding: 10px;
+}
+
+.compare-img-container {
+  margin: 96px auto 0 auto;
+  width: 612px;
+  height: 400px;
+}
+
+.compare-section {
+  margin-top: 48px;
+  @include mq("phablet", max) {
+    .mt-48 {
+      margin-top: 48px;
+    }
+  }
+}
+.alert {
+  margin: 96px auto 0 auto;
+  width: 448px;
+  height: 269px;
 }

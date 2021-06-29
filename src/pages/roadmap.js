@@ -46,7 +46,11 @@ const Roadmap = ({ data }) => {
         sectionContent={sectionContent}
         kickerText="What’s next"
       />
-      <TradeNowCTA />
+      <TradeNowCTA
+        title="Take Advantage Of The Fastest Crypto Trading Tool"
+        description="Suitable For Day Trading or Automated Trading"
+        btn="Trade now with Altrady"
+      />
       <SectionLayout sectionName="upcoming">
         <SectionHeader title={comingUp.title} content={comingUp.content} />
         <div className="row mt-5">

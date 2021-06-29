@@ -7,10 +7,11 @@ const NavDropdownFeatureColumn = ({ title, content }) => {
       <h4 className="title">{title}</h4>
       <div className="row flex-column">
         {content &&
-          content.map(({ name, description, icon }, idx) => (
+          content.map(({ name, slug, description, icon }, idx) => (
             <NavFeatureItem
               title={name}
               content={description}
+              slug={slug}
               imgSrc={icon.url}
               key={idx}
             />

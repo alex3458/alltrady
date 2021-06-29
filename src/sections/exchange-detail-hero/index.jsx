@@ -1,6 +1,8 @@
 import React from "react"
+import { Link } from "gatsby"
 import GotoBtn from "../../components/common/GotoBtn"
 import "../style.scss"
+import { LeftAngle } from "../../utils/imgLoader"
 
 const ExchangeDetailHeroSection = ({ exchangeData }) => {
   return (
@@ -8,6 +10,11 @@ const ExchangeDetailHeroSection = ({ exchangeData }) => {
       <div className="layout-container">
         <div className="row item">
           <div className="col-lg-6">
+            <Link to="/exchanges" className="back__link">
+              <img alt="left angle" src={LeftAngle} className="back-img" />
+              All exchanges
+            </Link>
+
             <div className="item-name d-flex">
               <img
                 alt={exchangeData?.name}

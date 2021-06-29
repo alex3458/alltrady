@@ -1,9 +1,9 @@
 import { Link } from "gatsby"
 import React from "react"
 
-const NavFeatureItem = ({ title, content, imgSrc }) => {
+const NavFeatureItem = ({ title, slug, content, imgSrc }) => {
   return (
-    <Link to="/feature" className="link-non-effect">
+    <Link to={`/${slug}`} className="link-non-effect">
       <div className="feature-item col-sm-6 col-lg-12">
         <img alt={title} src={imgSrc} className="feature-item__image" />
         <div className="feature-item__content-wrapper">

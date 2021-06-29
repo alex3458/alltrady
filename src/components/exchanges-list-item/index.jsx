@@ -53,7 +53,7 @@ const ExchangesListItem = ({
         </div>
         <div className="action d-flex justify-content-between">
           <Link
-            to={`/exchange/${slug}`}
+            to={`/exchanges/${slug}`}
             className="btn-learn-more button color-primary position-relative text-link"
           >
             Learn more

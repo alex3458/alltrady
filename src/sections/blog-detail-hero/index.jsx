@@ -2,8 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 const BlogDetailHero = ({ blogData, categories }) => {
-  const data = blogData ? blogData.data : null
-  const categoryId = data?.category.id
+  const categoryId = blogData?.category.id
   let color = "green"
   let type = "test"
   let slug = "crypto-trading"
@@ -16,28 +15,24 @@ const BlogDetailHero = ({ blogData, categories }) => {
       }
     })
   return (
-    data && (
-      <div className="blog-detail-hero position-relative">
-        <img
-          src={data.thumbnail?.url}
-          alt="title"
-          className="blog-detail-bk w-100 h-600"
-        />
-        <div className="layout-container position-absolute blog-detail-hero__container">
-          <Link to={`/category/${slug}`} className="category-link">
-            <p
-              className={"caption blog-detail-hero__type color-white " + color}
-            >
-              {type}
-            </p>
-          </Link>
-          <h3 className="blog-detail-hero__title">{data.title}</h3>
-          <p className="caption blog-detail-hero__date color-dark-tertiary">
-            {data.date}
+    <div className="blog-detail-hero position-relative">
+      <img
+        src={blogData?.thumbnail.url}
+        alt={blogData?.thumbnail.alt}
+        className="blog-detail-bk w-100 h-600"
+      />
+      <div className="layout-container position-absolute blog-detail-hero__container">
+        <Link to={`/category/${slug}`} className="category-link">
+          <p className={"caption blog-detail-hero__type color-white " + color}>
+            {type}
           </p>
-        </div>
+        </Link>
+        <h3 className="blog-detail-hero__title">{blogData?.title}</h3>
+        <p className="caption blog-detail-hero__date color-dark-tertiary">
+          {blogData?.date}
+        </p>
       </div>
-    )
+    </div>
   )
 }
 

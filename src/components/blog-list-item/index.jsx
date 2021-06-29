@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const BlogListItem = ({ thumbnail, title, date, slug, extraCls = "" }) => {
   return (
     <div className="blog-list-item">
-      <Link to={`/blog-detail/${slug}`}>
+      <Link to={`/blog/${slug}`}>
         <div className="d-flex">
           <div className="blog-list-item__img">
             <img alt={title} src={thumbnail?.url} />

@@ -1,4 +1,5 @@
 const path = require("path")
+const linkResolver = require("./src/utils/linkResovler")
 
 module.exports = {
   /* Your site config here */
@@ -36,6 +37,7 @@ module.exports = {
       resolve: "gatsby-source-prismic",
       options: {
         repositoryName: "altrady",
+        lang: "*",
         schemas: {
           exchanges: require("./custom_types/exchanges.json"),
           features: require("./custom_types/features.json"),
@@ -46,6 +48,7 @@ module.exports = {
           tutorial: require("./custom_types/tutorial.json"),
           roadmap: require("./custom_types/roadmap.json"),
         },
+        linkResolver: () => doc => linkResolver(doc),
       },
     },
     {
@@ -59,14 +62,6 @@ module.exports = {
         display: "standalone",
         icon: "src/assets/imgs/favicon.svg",
       },
-    },
-    {
-      resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/exchange/*`] },
-    },
-    {
-      resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/blog-detail/*`] },
     },
     {
       resolve: `gatsby-plugin-create-client-paths`,

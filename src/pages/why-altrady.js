@@ -55,8 +55,11 @@ const WhyAltrady = () => {
         sectionContent={sectionContent}
         kickerText="Why Altrady?"
       />
-
-      <TradeNowCTA />
+      <TradeNowCTA
+        title="Take Advantage Of The Fastest Crypto Trading Tool"
+        description="Suitable For Day Trading or Automated Trading"
+        btn="Trade now with Altrady"
+      />
       <PeopleSayingSection3 showHeader={false} extraClsName="why-altrady" />
       <AltradySubscribeListSection
         title={altradySubscribeTitle}

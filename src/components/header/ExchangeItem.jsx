@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const ExchangeItem = ({ title, content, slug, imgSrc, extraCls = "" }) => {
   return (
-    <Link to={`/exchange/${slug}`} className={"link-non-effect" + extraCls}>
+    <Link to={`/exchanges/${slug}`} className={"link-non-effect" + extraCls}>
       <div className="feature-item">
         <img alt={title} src={imgSrc} className="feature-item__image" />
         <div className="feature-item__content-wrapper">

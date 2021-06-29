@@ -6,29 +6,27 @@ import BlogDetailHero from "../sections/blog-detail-hero"
 import BlogDetailList from "../sections/blog-detail-list"
 import Seo from "../components/seo"
 
-const BlogDetail = ({ location, data }) => {
-  const currentSlug = location.pathname.split("/")[2]
+const BlogDetail = ({ pageContext, data }) => {
+  const { blogDetail } = pageContext
   const blogData = data?.allPrismicBlogPostApi.nodes
-  const currentBlog = blogData.filter(item => item.data.slug === currentSlug)
+  const currentBlog = blogDetail?.data
   const categories = data?.allPrismicBlogCategory.nodes
   const features = blogData
     .filter(item => item.data.featured === true)
     .slice(0, 5)
   const moreBlog = blogData.slice(0, 8)
+
   return (
     <BlogPageLayout>
       <Seo
-        title={currentBlog[0] ? currentBlog[0].data.meta_title : ""}
-        description={currentBlog[0] ? currentBlog[0].data.meta_description : ""}
-        keywords={currentBlog[0] ? currentBlog[0].data.meta_keywords : ""}
+        title={blogDetail?.data.meta_title}
+        description={blogDetail?.data.meta_description}
+        keywords={blogDetail?.data.meta_keywords}
       />
-      <BlogDetailHero
-        blogData={currentBlog && currentBlog[0]}
-        categories={categories}
-      />
+      <BlogDetailHero blogData={currentBlog} categories={categories} />
       <div className="layout-container">
         <BlogDetailContentSection
-          content={currentBlog && currentBlog[0]}
+          content={currentBlog?.content}
           features={features}
         />
         <BlogDetailList
@@ -77,10 +75,16 @@ export const query = graphql`
               start
               end
               type
+              data {
+                url
+                target
+                link_type
+              }
             }
           }
           summary
           thumbnail {
+            alt
             url
           }
           meta_title

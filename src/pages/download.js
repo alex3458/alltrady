@@ -5,7 +5,7 @@ import TradingSoftwareSection from "../sections/trading-software"
 import FeatureCTASection from "../sections/feature-cta"
 import { softwareListData } from "../utils/staticData"
 
-const Download = ({ data }) => {
+const Download = () => {
   return (
     <LandingPageLayout>
       <DownloadHeroSection />

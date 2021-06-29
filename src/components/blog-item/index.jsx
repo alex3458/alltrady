@@ -14,9 +14,13 @@ const BlogItem = ({ data, categories, size, clsName }) => {
     })
   return (
     <div className={"item " + size + clsName}>
-      <Link to={`/blog-detail/${slug}`}>
+      <Link to={`/blog/${slug}`}>
         <div className="img-overlay-container position-relative">
-          <img alt={title} src={thumbnail?.url} className="item__img w-100" />
+          <img
+            alt={thumbnail?.alt}
+            src={thumbnail?.url}
+            className="item__img w-100"
+          />
         </div>
         <p className={"caption item__type " + color}>{type}</p>
         <h2 className="item__title">{title}</h2>

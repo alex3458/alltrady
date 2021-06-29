@@ -3,7 +3,7 @@ import React from "react"
 
 const NavExchangeItem = ({ title, content, imgSrc, slug }) => {
   return (
-    <Link to={`/exchange/${slug}`} className="link-non-effect">
+    <Link to={`/exchanges/${slug}`} className="link-non-effect">
       <div className="feature-item col-sm-6 col-lg-12">
         <img alt={title} src={imgSrc} className="feature-item__image" />
         <div className="feature-item__content-wrapper">

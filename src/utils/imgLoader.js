@@ -23,9 +23,7 @@ import huobi from "../assets/imgs/huobi.svg"
 import bittrex from "../assets/imgs/bittrex.svg"
 import hitbtc from "../assets/imgs/hitbtc.svg"
 import kucoin from "../assets/imgs/kucoin.svg"
-
 import coinbasePro from "../assets/imgs/coinbase-pro.svg"
-
 import kraken from "../assets/imgs/kraken.svg"
 import poloniex from "../assets/imgs/poloniex.svg"
 import okex from "../assets/imgs/okex.svg"
@@ -83,6 +81,11 @@ import bybit from "../assets/imgs/bybit.svg"
 import academyIcon from "../assets/imgs/academy-icon.svg"
 import videoPlay from "../assets/imgs/video-play.svg"
 import starIcon from "../assets/imgs/star-icon.svg"
+import leftAngle from "../assets/imgs/left-angle.svg"
+
+import yesIcon from "../assets/imgs/yes-icon.svg"
+import noIcon from "../assets/imgs/no-icon.svg"
+import waitingIcon from "../assets/imgs/waiting-icon.svg"
 
 export const Logo = logo
 export const BLogo = blogo
@@ -168,3 +171,8 @@ export const Bybit = bybit
 export const AcademyIcon = academyIcon
 export const VideoPlay = videoPlay
 export const StarIcon = starIcon
+export const LeftAngle = leftAngle
+
+export const YesIcon = yesIcon
+export const NoIcon = noIcon
+export const WaitingIcon = waitingIcon

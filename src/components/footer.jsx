@@ -68,7 +68,7 @@ const Footer = () => {
         src={item.data.icon.url}
         className="exchange-img"
       />
-      <Link to={`/exchange/${item.data.slug}`}>{item.data.name}</Link>
+      <Link to={`/exchanges/${item.data.slug}`}>{item.data.name}</Link>
     </div>
   ))
 
