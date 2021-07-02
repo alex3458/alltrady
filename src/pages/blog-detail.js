@@ -15,7 +15,6 @@ const BlogDetail = ({ pageContext, data }) => {
     .filter(item => item.data.featured === true)
     .slice(0, 5)
   const moreBlog = blogData.slice(0, 8)
-
   return (
     <BlogPageLayout>
       <Seo
@@ -44,15 +43,15 @@ export const query = graphql`
     allPrismicBlogCategory {
       nodes {
         data {
-          category_color
+          color
           meta_title
           meta_keywords
           meta_description
-          image {
+          icon {
             url
           }
-          category_slug
-          category_name
+          slug
+          name
         }
         prismicId
       }
@@ -66,21 +65,6 @@ export const query = graphql`
           date
           category {
             id
-          }
-          content {
-            type
-            text
-            url
-            spans {
-              start
-              end
-              type
-              data {
-                url
-                target
-                link_type
-              }
-            }
           }
           summary
           thumbnail {

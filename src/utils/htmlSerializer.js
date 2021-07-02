@@ -1,7 +1,7 @@
 import React from "react"
 import { Elements } from "prismic-richtext"
-import { Link as PrismicLink } from "prismic-reactjs"
-import { Link } from "gatsby"
+// import { Link as PrismicLink } from "prismic-reactjs"
+// import { Link } from "gatsby"
 import linkResolver from "./linkResovler"
 // -- Function to add unique key to props
 const propsWithUniqueKey = function (props, key) {
@@ -48,34 +48,19 @@ const htmlSerializer = function (type, element, content, children, key) {
       )
 
     case Elements.hyperlink: // Hyperlinks
-      let result = ""
-      console.log(content)
-      const url = PrismicLink.url(element.data, linkResolver)
-      if (element.data?.link_type === "Web") {
-        result = (
-          <Link to={url} key={key}>
-            {content}
-          </Link>
-        )
-      } else {
-        const targetAttr = element.data?.target
-          ? { target: element.data?.target }
-          : {}
-        const relAttr = element.data?.target ? { rel: "noopener" } : {}
-        props = Object.assign(
-          {
-            href: element.data?.url || linkResolver(element.data),
-          },
-          targetAttr,
-          relAttr
-        )
-        result = React.createElement(
-          "a",
-          propsWithUniqueKey(props, key),
-          children
-        )
-      }
-      return result
+      const targetAttr = element.data?.target
+        ? { target: element.data?.target }
+        : {}
+      const relAttr = element.data?.target ? { rel: "noopener" } : {}
+      props = Object.assign(
+        {
+          className: "link-class",
+          href: element.data?.url || linkResolver(element.data),
+        },
+        targetAttr,
+        relAttr
+      )
+      return React.createElement("a", propsWithUniqueKey(props, key), children)
 
     case Elements.em: // Emphasis
       return React.createElement("em", propsWithUniqueKey(props, key), children)

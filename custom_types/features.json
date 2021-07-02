@@ -1,53 +1,63 @@
 {
-  "Main" : {
-    "feature_group" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "icon" : {
-            "type" : "Image",
-            "config" : {
-              "constraint" : { },
-              "thumbnails" : [ ],
-              "label" : "Icon"
+  "Main": {
+    "feature_group": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "icon": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Icon"
             }
           },
-          "name" : {
-            "type" : "Text",
-            "config" : {
-              "label" : "Name"
+          "name": {
+            "type": "Text",
+            "config": {
+              "label": "Name"
             }
           },
-          "priority" : {
-            "type" : "Number",
-            "config" : {
-              "label" : "Priority"
+          "slug": {
+            "type": "Text",
+            "config": {
+              "label": "Slug"
             }
           },
-          "featured_in_navbar" : {
-            "type" : "Boolean",
-            "config" : {
-              "default_value" : false,
-              "label" : "Featured in navbar"
+          "priority": {
+            "type": "Number",
+            "config": {
+              "label": "Priority"
             }
           },
-          "description" : {
-            "type" : "Text",
-            "config" : {
-              "label" : "Description"
+          "featured_in_navbar": {
+            "type": "Boolean",
+            "config": {
+              "default_value": false,
+              "label": "Featured in navbar"
             }
           },
-          "type" : {
-            "type" : "Select",
-            "config" : {
-              "options" : [ "Discover", "Execute", "Analyze" ],
-              "default_value" : "Discover",
-              "label" : "Type",
-              "placeholder" : "Discover"
+          "description": {
+            "type": "Text",
+            "config": {
+              "label": "Description"
+            }
+          },
+          "type": {
+            "type": "Select",
+            "config": {
+              "options": [
+                "Discover",
+                "Execute",
+                "Analyze"
+              ],
+              "default_value": "Discover",
+              "label": "Type",
+              "placeholder": "Discover"
             }
           }
         },
-        "label" : "Feature Group"
+        "label": "Feature Group"
       }
     }
   }

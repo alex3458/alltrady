@@ -113,9 +113,9 @@ export const query = graphql`
     allPrismicBlogCategory {
       nodes {
         data {
-          category_color
-          category_name
-          category_slug
+          color
+          name
+          slug
           meta_description
           meta_keywords
           meta_title

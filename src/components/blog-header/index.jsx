@@ -1,14 +1,64 @@
 import React, { useState } from "react"
 import { Logo } from "../../utils/imgLoader"
 import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import "../style.scss"
 import LinkPrimaryBtn from "../common/LinkPrimaryBtn"
 import NavFeatureTab from "../header/NavFeatureTab"
-
+import NavCategoryTab from "../header/NavCategoryTab"
 import BodyClassName from "react-body-classname"
 import { BlogIcon } from "../../utils/imgLoader"
 
 const BlogHeader = () => {
+  const data = useStaticQuery(graphql`
+    query BlogHeader {
+      allPrismicFeatures(
+        sort: { order: ASC, fields: data___feature_group___priority }
+      ) {
+        nodes {
+          data {
+            feature_group {
+              name
+              slug
+              description
+              featured_in_navbar
+              type
+              icon {
+                url
+              }
+            }
+          }
+        }
+      }
+      allPrismicBlogCategory {
+        nodes {
+          data {
+            slug
+            name
+            icon {
+              url
+            }
+          }
+          prismicId
+        }
+      }
+    }
+  `)
+
+  const featureData = data.allPrismicFeatures.nodes[0].data.feature_group.filter(
+    item => item.featured_in_navbar === true
+  )
+  const navFeatureDiscoverData = featureData.filter(
+    item => item.type === "Discover"
+  )
+  const navFeatureExcuteData = featureData.filter(
+    item => item.type === "Execute"
+  )
+  const navFeatureAnalyzeData = featureData.filter(
+    item => item.type === "Analyze"
+  )
+  const navCategoryData = data.allPrismicBlogCategory.nodes
+
   const [hambugerActive, setHambugerActiveState] = useState(false)
   const [navMenuShow, setNavMenuShow] = useState(["", ""])
   const hamburgerHandler = () => {
@@ -91,7 +141,11 @@ const BlogHeader = () => {
                     Features
                     <span />
                   </Link>
-                  <NavFeatureTab />
+                  <NavFeatureTab
+                    navFeatureDiscoverData={navFeatureDiscoverData}
+                    navFeatureExcuteData={navFeatureExcuteData}
+                    navFeatureAnalyzeData={navFeatureAnalyzeData}
+                  />
                 </li>
                 <li
                   className={"nav-item dropdown " + navMenuShow[1]}
@@ -103,7 +157,7 @@ const BlogHeader = () => {
                     Categories
                     <span />
                   </Link>
-                  <NavFeatureTab />
+                  <NavCategoryTab navCategoryData={navCategoryData} />
                 </li>
                 <li className="action-btns">
                   <LinkPrimaryBtn to="#try-free">Try for Free</LinkPrimaryBtn>

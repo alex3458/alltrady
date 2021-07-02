@@ -1,46 +1,5 @@
-$yellow-light: #fc781a;
-$dark: #13161a;
-$black: #1e2225;
-$dark-light: #181b1f;
-$green: #5ec262;
-$blue: #017aff;
-$orange: #fd791a;
-$yellow-bg: #c6d32b;
-$red: #ef3e36;
-$pink: #d32b90;
-$white: #fff;
-
-$primary: #0d172a;
-$secondary: rgba(13, 23, 42, 0.8);
-$light-blue-bk: #fafcff;
-
-// Media query breakpoints
-$breakpoints: (
-  "phone": 400px,
-  "phone-wide": 480px,
-  "phablet": 576px,
-  "tablet-small": 640px,
-  "tablet": 769px,
-  "tablet-wide": 991px,
-  "desktop": 1200px,
-  "desktop-wide": 1440px,
-);
-
-// Z-index
-$z-overlay: 9;
-$z-header: 10;
-
-@mixin mq($width, $type: min) {
-  @if map_has_key($breakpoints, $width) {
-    $width: map_get($breakpoints, $width);
-    @if $type == max {
-      $width: $width - 1px;
-    }
-    @media only screen and (#{$type}-width: $width) {
-      @content;
-    }
-  }
-}
+@import "../styles/variables";
+@import "../styles/mixins";
 
 .section {
   padding: 120px 0;
@@ -58,7 +17,7 @@ $z-header: 10;
   &.hero {
     background: #fafcff;
     &.academy {
-      background: #141617;
+      background: $dark-bg;
       box-shadow: inset 0px -1px 0px #20293b;
       .kicker {
         color: #26a8ff;
@@ -354,6 +313,65 @@ $z-header: 10;
     &-text {
       color: rgba(13, 23, 42, 0.64);
     }
+  }
+  &.comparison {
+    .compare-img-container {
+      margin: 96px auto 0 auto;
+      width: 612px;
+      height: 400px;
+      @include mq("tablet-small", max) {
+        width: auto;
+        height: auto;
+      }
+    }
+    .compare-section {
+      margin-top: 48px;
+      @include mq("phablet", max) {
+        .mt-48 {
+          margin-top: 48px;
+        }
+      }
+    }
+    .people {
+      margin: 96px auto 0 auto;
+      width: 448px;
+      height: 269px;
+      @include mq("phone-wide", max) {
+        width: auto;
+        padding-left: 35px;
+        padding-right: 35px;
+      }
+    }
+  }
+  &.binance {
+    background-color: $dark-bg;
+  }
+  .binance-img {
+    width: 612px;
+    height: 400px;
+    margin: 96px auto 0 auto;
+    @include mq("tablet-small", max) {
+      margin: 48px auto 0 auto;
+      width: auto;
+      height: auto;
+    }
+  }
+  .trading-easy {
+    display: flex;
+    justify-content: center;
+    margin-top: 96px;
+    @include mq("phablet", max) {
+      .binance-logo,
+      .altrady-logo {
+        width: 129px;
+        height: 32px;
+      }
+    }
+  }
+  .logo-content {
+    margin: 16px 0 48px 0;
+    font-size: 18px;
+    color: rgba(13, 23, 42, 0.8);
   }
 }
 .question-list {
@@ -866,13 +884,22 @@ span {
     border-radius: 30px;
   }
   &__type.red {
-    background: $red;
+    background-color: $red;
   }
   &__type.green {
-    background: $green;
+    background-color: $green;
   }
   &__type.pink {
-    background: $pink;
+    background-color: $pink;
+  }
+  &__type.blue {
+    background-color: $blue;
+  }
+  &__type.orange {
+    background-color: $yellowish;
+  }
+  &__type.yellow {
+    background-color: $yellow;
   }
 }
 
@@ -910,6 +937,9 @@ span {
       width: 100%;
       height: 100%;
       border-radius: 4px;
+    }
+    @include mq("tablet-wide", max) {
+      padding-right: unset;
     }
   }
   ul {
@@ -1026,24 +1056,4 @@ span {
 
 .back-img {
   padding: 10px;
-}
-
-.compare-img-container {
-  margin: 96px auto 0 auto;
-  width: 612px;
-  height: 400px;
-}
-
-.compare-section {
-  margin-top: 48px;
-  @include mq("phablet", max) {
-    .mt-48 {
-      margin-top: 48px;
-    }
-  }
-}
-.alert {
-  margin: 96px auto 0 auto;
-  width: 448px;
-  height: 269px;
 }

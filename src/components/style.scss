@@ -1,127 +1,5 @@
-// Colors
-$yellow-light: #fc781a;
-$dark: #13161a;
-$black: #1e2225;
-$dark-light: #181b1f;
-$green: #1bc47d;
-$blue: #017aff;
-$blue2: #26a8ff;
-$orange: #f0b90b;
-$yellow-bg: #c6d32b;
-$red: #ef3e36;
-$pink: #d61881;
-$white: #fff;
-
-$primary: #0d172a;
-$secondary: rgba(13, 23, 42, 0.8);
-$border-color: #eff2f7;
-$bk-color: #fafcff;
-
-$blue-hover: #2a8fff;
-$blue-active: #0170eb;
-
-// Media query breakpoints
-$breakpoints: (
-  "phone": 400px,
-  "phone-wide": 480px,
-  "phablet": 560px,
-  "tablet-small": 640px,
-  "tablet": 769px,
-  "tablet-wide": 991px,
-  "desktop": 1200px,
-  "desktop-wide": 1440px,
-);
-
-// Z-index
-$z-overlay: 9;
-$z-header: 10;
-
-@mixin mq($width, $type: min) {
-  @if map_has_key($breakpoints, $width) {
-    $width: map_get($breakpoints, $width);
-    @if $type == max {
-      $width: $width - 1px;
-    }
-    @media only screen and (#{$type}-width: $width) {
-      @content;
-    }
-  }
-}
-@mixin bodyText($size) {
-  font-weight: 400;
-  @if $size == large {
-    font-size: 16px;
-    line-height: 2;
-    @include mq("tablet-wide") {
-      font-size: 18px;
-    }
-  }
-  @if $size == normal {
-    font-size: 14px;
-    line-height: 2;
-    @include mq("tablet-wide") {
-      font-size: 16px;
-    }
-  }
-  @if $size == small {
-    font-size: 12px;
-    line-height: 1.8;
-    @include mq("tablet-wide") {
-      font-size: 14px;
-    }
-  }
-}
-@mixin menuEffect($color, $bg) {
-  a {
-    position: relative;
-    &:hover {
-      background-color: $bg !important;
-      text-decoration: none;
-      // svg path {
-      //   fill: $color;
-      // }
-      &::before,
-      &::after {
-        width: 50%;
-      }
-    }
-    &::before,
-    &::after {
-      position: absolute;
-      content: "";
-      width: 0;
-      height: 1px;
-      background-color: $color;
-      transition: width 0.3s ease-in-out;
-    }
-  }
-}
-@mixin menuHover1() {
-  a {
-    &::before {
-      top: auto;
-      bottom: 0;
-      right: 50%;
-    }
-    &::after {
-      top: auto;
-      bottom: 0;
-      left: 50%;
-    }
-  }
-}
-@mixin menuHover2() {
-  a {
-    &::before {
-      top: 0;
-      right: 0;
-    }
-    &::after {
-      bottom: 0;
-      left: 0%;
-    }
-  }
-}
+@import "../styles/variables";
+@import "../styles/mixins";
 
 // Header styles
 .header {
@@ -241,7 +119,7 @@ $z-header: 10;
         box-shadow: none;
       }
       &.academy {
-        background-color: #141617;
+        background-color: $dark-bg;
         .title {
           color: rgba(255, 255, 255, 0.8);
         }
@@ -327,7 +205,7 @@ $z-header: 10;
 
 //Academy Header styles
 .academy-header {
-  background-color: #141617;
+  background-color: $dark-bg;
   box-shadow: inset 0px -1px 0px #20293b;
   .hamburger {
     span {
@@ -341,7 +219,7 @@ $z-header: 10;
     @include mq("tablet-wide", max) {
       &.desktop {
         &.active {
-          background-color: #141617 !important;
+          background-color: $dark-bg !important;
         }
       }
     }
@@ -536,7 +414,7 @@ $z-header: 10;
       margin: 0;
     }
     &:hover {
-      background-color: $bk-color;
+      background-color: $light-blue-bk;
     }
     &__image {
       width: 40px;
@@ -825,6 +703,15 @@ $z-header: 10;
       &.pink {
         background-color: $pink;
       }
+      &.blue {
+        background-color: $blue;
+      }
+      &.orange {
+        background-color: $yellowish;
+      }
+      &.yellow {
+        background-color: $yellow;
+      }
     }
     &.small h2 {
       margin: 12px 0 4px;
@@ -899,6 +786,20 @@ $z-header: 10;
 .blog-list2 {
   .blog-list-item {
     width: 33%;
+    @include mq("tablet-small", max) {
+      width: 50%;
+      padding: 0 15px;
+      &__content {
+        margin-top: 12px;
+      }
+      .direction {
+        flex-direction: column;
+      }
+    }
+    @include mq("phone-wide", max) {
+      width: 100%;
+      padding: 0;
+    }
   }
 }
 .blog-list-item {
@@ -928,10 +829,7 @@ $z-header: 10;
   &__date {
     margin: 0 !important;
   }
-  @include mq("phone-wide", max) {
-    flex-direction: column;
-    width: 100%;
-
+  @include mq("tablet-small", max) {
     &__img {
       width: 100%;
       height: 120px;
@@ -958,7 +856,7 @@ $z-header: 10;
       height: 60px;
     }
     &-tag {
-      background: $bk-color;
+      background: $light-blue-bk;
       border: 1px solid $border-color;
       border-radius: 30px;
       padding: 4px 12px;

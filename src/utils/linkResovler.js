@@ -3,7 +3,6 @@
 As your project grows, you should update this function according to your routes */
 
 const linkResolver = doc => {
-  console.log(doc)
   return "/"
 }
 

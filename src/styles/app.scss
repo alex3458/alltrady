@@ -1,43 +1,5 @@
-// Colors
-$yellow-light: #fc781a;
-$dark: #13161a;
-$black: #1e2225;
-$dark-light: #181b1f;
-$green: #5ec262;
-$blue: #017aff;
-$orange: #fd791a;
-$yellow-bg: #c6d32b;
-$red: #ef3e36;
-$pink: #d32b90;
-$white: #fff;
-
-$primary: #0d172a;
-$secondary: rgba(13, 23, 42, 0.8);
-$border-color: #eeeff0;
-
-// Media query breakpoints
-$breakpoints: (
-  "phone": 400px,
-  "phone-wide": 480px,
-  "phablet": 560px,
-  "tablet-small": 640px,
-  "tablet": 769px,
-  "tablet-wide": 991px,
-  "desktop": 1200px,
-  "desktop-wide": 1440px,
-);
-
-@mixin mq($width, $type: min) {
-  @if map_has_key($breakpoints, $width) {
-    $width: map_get($breakpoints, $width);
-    @if $type == max {
-      $width: $width - 1px;
-    }
-    @media only screen and (#{$type}-width: $width) {
-      @content;
-    }
-  }
-}
+@import "./variables";
+@import "./mixins";
 
 html,
 body {
@@ -323,5 +285,12 @@ main {
 .width-sm-20 {
   @include mq("tablet-wide", max) {
     flex: 0 0 20%;
+  }
+}
+
+.embed-youtube {
+  iframe {
+    width: 100%;
+    height: 400px;
   }
 }

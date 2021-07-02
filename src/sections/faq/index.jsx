@@ -2,39 +2,7 @@ import React, { useState } from "react"
 import SectionHeader from "../../components/common/SectionHeader"
 import SectionLayout from "../../layouts/SectionLayout"
 
-const title = `Frequently Asked Questions`
-const content = `To support the global trading community, we are offering special discounts for Annual plan.`
-const questions = [
-  {
-    title: `Question`,
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa enim.`,
-  },
-  {
-    title: `Question`,
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa enim.`,
-  },
-  {
-    title: `Question`,
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa enim.`,
-  },
-  {
-    title: `Question`,
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa enim.`,
-  },
-  {
-    title: `Question`,
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa enim.`,
-  },
-  {
-    title: `Question`,
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa enim.`,
-  },
-  {
-    title: `Question`,
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa enim.`,
-  },
-]
-const FAQSection = () => {
+const FAQSection = ({ title, content, questions }) => {
   const [activeIdx, setActiveIdx] = useState(-1)
   return (
     <SectionLayout sectionName="faq">

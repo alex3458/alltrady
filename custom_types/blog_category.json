@@ -1,29 +1,29 @@
 {
   "Main" : {
-    "image" : {
+    "icon" : {
       "type" : "Image",
       "config" : {
         "constraint" : { },
         "thumbnails" : [ ],
-        "label" : "Image"
+        "label" : "Icon"
       }
     },
-    "category_name" : {
+    "name" : {
       "type" : "Text",
       "config" : {
-        "label" : "Category Name"
+        "label" : "Name"
       }
     },
-    "category_slug" : {
+    "slug" : {
       "type" : "Text",
       "config" : {
-        "label" : "Category Slug"
+        "label" : "Slug"
       }
     },
-    "category_color" : {
+    "color" : {
       "type" : "Text",
       "config" : {
-        "label" : "Category Color"
+        "label" : "Color"
       }
     },
     "meta_title" : {

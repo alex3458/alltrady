@@ -42,10 +42,23 @@ exports.createPages = async ({ graphql, actions }) => {
               type
               text
               url
+              alt
+              oembed {
+                provider_name
+                type
+                html
+                embed_url
+                title
+              }
               spans {
                 start
                 end
                 type
+                data {
+                  url
+                  target
+                  link_type
+                }
               }
             }
             summary

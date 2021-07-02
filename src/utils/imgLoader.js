@@ -87,6 +87,9 @@ import yesIcon from "../assets/imgs/yes-icon.svg"
 import noIcon from "../assets/imgs/no-icon.svg"
 import waitingIcon from "../assets/imgs/waiting-icon.svg"
 
+import binanceLogo from "../assets/imgs/binance-logo.svg"
+import altradyLogo from "../assets/imgs/altrady-logo.svg"
+
 export const Logo = logo
 export const BLogo = blogo
 export const RealtimeMarketData = realtimeMarketData
@@ -176,3 +179,6 @@ export const LeftAngle = leftAngle
 export const YesIcon = yesIcon
 export const NoIcon = noIcon
 export const WaitingIcon = waitingIcon
+
+export const BinanceLogo = binanceLogo
+export const AltradyLogo = altradyLogo

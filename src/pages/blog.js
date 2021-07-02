@@ -34,15 +34,15 @@ export const query = graphql`
     allPrismicBlogCategory {
       nodes {
         data {
-          category_color
+          color
           meta_title
           meta_keywords
           meta_description
-          image {
+          icon {
             url
           }
-          category_slug
-          category_name
+          slug
+          name
         }
         prismicId
       }

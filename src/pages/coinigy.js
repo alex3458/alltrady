@@ -50,7 +50,7 @@ const Coinigy = () => {
             altradyContent={`Altrady also processes real-time order notifications. Knowing when your order is filled is crucial to not miss your profit target. Orders placed through Altrady are monitored with their websockets connection. This allows Altrady users to receive order notifications in real-time.`}
             coinigyContent={`In contrast, order notifications from Coinigy often come in minutes after the order is filled. Again, this can cause you to miss a profitable trading opportunity.`}
           />
-          <div className="d-flex justify-content-center alert">
+          <div className="d-flex justify-content-center people">
             <div className="people-saying-item h-auto">
               <img
                 alt="Testimonial"

@@ -7,8 +7,7 @@ const Category = ({ location, data }) => {
   const currentSlug = location.pathname.split("/")[2]
   const categories = data?.allPrismicBlogCategory.nodes
   const currentCatetgory =
-    categories &&
-    categories.filter(item => item.data.category_slug === currentSlug)
+    categories && categories.filter(item => item.data.slug === currentSlug)
   const prismicId = currentCatetgory[0] && currentCatetgory[0].prismicId
   const blogData = data?.allPrismicBlogPostApi.nodes.filter(
     item => item.data.category.id === prismicId
@@ -16,7 +15,7 @@ const Category = ({ location, data }) => {
   return (
     <BlogPageLayout>
       <h1 className="category-name">
-        {currentCatetgory[0] && currentCatetgory[0].data.category_name}
+        {currentCatetgory[0] && currentCatetgory[0].data.name}
       </h1>
       <div className="layout-container">
         <BlogDetailList
@@ -49,9 +48,9 @@ export const query = graphql`
     allPrismicBlogCategory {
       nodes {
         data {
-          category_slug
-          category_color
-          category_name
+          slug
+          color
+          name
         }
         prismicId
       }

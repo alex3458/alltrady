@@ -5,7 +5,7 @@ const BlogListItem = ({ thumbnail, title, date, slug, extraCls = "" }) => {
   return (
     <div className="blog-list-item">
       <Link to={`/blog/${slug}`}>
-        <div className="d-flex">
+        <div className="d-flex direction">
           <div className="blog-list-item__img">
             <img alt={title} src={thumbnail?.url} />
           </div>

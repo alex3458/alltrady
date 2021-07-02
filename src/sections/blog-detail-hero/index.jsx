@@ -4,14 +4,14 @@ import { Link } from "gatsby"
 const BlogDetailHero = ({ blogData, categories }) => {
   const categoryId = blogData?.category.id
   let color = "green"
-  let type = "test"
+  let type = ""
   let slug = "crypto-trading"
   categories &&
     categories.forEach(item => {
       if (item.prismicId === categoryId) {
-        color = item.data.category_color
-        type = item.data.category_name
-        slug = item.data.category_slug
+        color = item.data.color
+        type = item.data.name
+        slug = item.data.slug
       }
     })
   return (

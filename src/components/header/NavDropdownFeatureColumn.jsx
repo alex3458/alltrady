@@ -12,7 +12,7 @@ const NavDropdownFeatureColumn = ({ title, content }) => {
               title={name}
               content={description}
               slug={slug}
-              imgSrc={icon.url}
+              imgSrc={icon?.url}
               key={idx}
             />
           ))}
