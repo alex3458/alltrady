@@ -36,7 +36,9 @@ Bring your trading experience to another level with the power of cryptocurrency 
 export default function Home({ data }) {
   const blogCategories = data.allPrismicBlogCategory.nodes
   const bestCryptorSectionData = data.allPrismicBlogPostApi.nodes.slice(0, 8)
-  const exchangeData = data?.allPrismicExchanges.nodes
+  const exchangeData = data?.allPrismicExchanges.nodes.filter(
+    item => item.data.upcoming === false
+  )
   return (
     <LandingPageLayout>
       <Seo title="Altrady Crypto Trading Software is Fast, Easy & Secure" />
@@ -85,6 +87,7 @@ export const query = graphql`
             url
           }
           partner
+          upcoming
         }
       }
     }

@@ -22,7 +22,7 @@ const TutorialSection = ({
           Academy
         </Link>
         /
-        <Link to={`/course/${categorySlug}`} className="pl-3">
+        <Link to={`/academy/${categorySlug}`} className="pl-3">
           {categoryName}
         </Link>
       </div>
@@ -83,7 +83,7 @@ const TutorialSection = ({
             {tutorialList.map((item, idx) => (
               <div key={idx} role="listitem" className="w-dyn-item">
                 <Link
-                  to={`/tutorial/${item.data.slug}`}
+                  to={`/academy/${item.data.slug}`}
                   className={`video-item w-inline-block ${
                     item.data.slug === currentTutorial.slug && "current-item"
                   }`}

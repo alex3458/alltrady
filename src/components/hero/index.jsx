@@ -25,7 +25,7 @@ const HeroComponent = ({
                   Altrady Academy
                 </Link>
                 /
-                <Link to={`/course/${slug}`} className="pl-3">
+                <Link to={`/academy/${slug}`} className="pl-3">
                   {headerContent}
                 </Link>
               </div>

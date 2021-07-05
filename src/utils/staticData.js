@@ -1,3 +1,16 @@
+import {
+  HomeHero,
+  SmartHero,
+  PositionsHero,
+  ExchangesHero,
+  RealtimeHero,
+  AdvancedHero,
+  PortfolioHero,
+  TradingAnalyticsHero,
+  MultichartHero,
+  BasicHero,
+} from "./imgLoader"
+
 export const heroSectionData = {
   content:
     "Boost your trading with the all-in-one cryptocurrency trading software. Trade on multiple exchanges, track your performance, improve and get less emotional.\nBitcoin trading platform for beginners and expert traders.",
@@ -7,8 +20,16 @@ export const heroSectionData = {
     "Altrady crypto trading platform helps you trade on multiple exchanges!",
   kicker: "Simple. Fast. Secure.",
   img: {
-    url:
-      "https://images.prismic.io/altrady/9febf806-f5ff-4068-a11d-08131f6d0689_blog-img.png?auto=compress%2Cformat",
+    url: HomeHero,
+  },
+}
+export const featuresHeroData = {
+  content: `Altrady created for you the ultimate crypto trading features.
+Check Altrady's best crypto features, so you can trade bitcoins and altcoins easier.`,
+  header: "Trading Features For Bitcoin and Altcoin",
+  kicker: "For traders, By traders",
+  img: {
+    url: HomeHero,
   },
 }
 export const benefitSection = {
@@ -77,46 +98,156 @@ export const featuresSection = {
   content:
     "With Altrady, you are at a huge advantage!\nOur tools and technology give you the easiest way to manage your trades and portfolio.",
 }
+export const featuresData = [
+  {
+    content:
+      "Altrady’s advanced smart trading form adds flexibility and power to your trading. Smart trading that fits all different trading strategies.",
+    img: {
+      url: SmartHero,
+    },
+    kicker: "Smart trading",
+    title: "Most powerful entry form with advanced automation features",
+  },
+  {
+    content:
+      "No matter how many trades you make, with Altrady you always know where you are in terms of profit and loss. We automatically calculate your past trades, including fees paid to exchanges.",
+    img: {
+      url: PositionsHero,
+    },
+    kicker: "Positions with PNL",
+    title:
+      "Track the progress and performance for each position across all accounts",
+  },
+  {
+    content:
+      "One way to trade on all your top crypto exchanges. No more learning curve for using a new crypto exchange. Benefit from advanced features most exchanges don't offer.",
+    img: {
+      url: ExchangesHero,
+    },
+    kicker: "Multi-exchange",
+    title: "Single platform to trade on multiple exchanges",
+  },
+  {
+    content: `Every trader wants to act fast. It's essential to see the market's real-time picture and receive instant alerts of prices, trades, and order books.
+
+In Altrady, all price info and alerts are real-time, and you receive notifications on the desktop, mobile, and email.`,
+    img: {
+      url: RealtimeHero,
+    },
+    kicker: "Real-time Market data",
+    title: "Stay up to date with the market",
+  },
+  {
+    content: `Default orders are fine, but with advanced orders you can create ladders, trailing stops and even one-cancels-the-other orders.`,
+    img: {
+      url: AdvancedHero,
+    },
+    kicker: "Advanced trading",
+    title: `Advanced trading`,
+  },
+  {
+    content: `After you connect your exchange accounts to Altrady, you’ll be able to track the changes in your portfolio.`,
+    img: {
+      url: PortfolioHero,
+    },
+    kicker: "Portfolio",
+    title: `Keep track of your assets across all exchanges`,
+  },
+  {
+    content: `The best cryptocurrency traders always stay on top of their performance. Improve your trading and see the progress in the long run.`,
+    img: {
+      url: TradingAnalyticsHero,
+    },
+    kicker: "Trading analytics",
+    title: `Analyze your trading quality`,
+  },
+  {
+    content: `With multiple charts on the same screen you can see the action on all of them at the same time.`,
+    img: {
+      url: MultichartHero,
+    },
+    kicker: "Multichart",
+    title: `Don’t miss a trade`,
+  },
+  {
+    content: `Enjoy the power and simplicity of Altrady,  saving your precious time.`,
+    img: {
+      url: BasicHero,
+    },
+    kicker: "Trading features",
+    title: `Buy and Sell with ease`,
+  },
+  {
+    content: `The best cryptocurrency traders always stay on top of their performance. Improve your trading and see the progress in the long run.`,
+    img: {
+      url: TradingAnalyticsHero,
+    },
+    kicker: "Watch lists",
+    title: `Keep your favorite markets organized`,
+  },
+  {
+    content: `The best cryptocurrency traders always stay on top of their performance. Improve your trading and see the progress in the long run.`,
+    img: {
+      url: TradingAnalyticsHero,
+    },
+    kicker: "Trading analytics",
+    title: `Analyze your trading quality`,
+  },
+  {
+    content: `The best cryptocurrency traders always stay on top of their performance. Improve your trading and see the progress in the long run.`,
+    img: {
+      url: TradingAnalyticsHero,
+    },
+    kicker: "Trading analytics",
+    title: `Analyze your trading quality`,
+  },
+  {
+    content: `The best cryptocurrency traders always stay on top of their performance. Improve your trading and see the progress in the long run.`,
+    img: {
+      url: TradingAnalyticsHero,
+    },
+    kicker: "Trading analytics",
+    title: `Analyze your trading quality`,
+  },
+]
 export const featuresListData = [
   {
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuntlabore et dolore magna aliqua. Porttitor eget dolor morbi non arcu risus quis varius. Lorem sed risus ultricies tristique nulla. Egestas quis ipsum suspendisse ultrices gravida dictum fusce.\n\nEgestas sed tempus urna et pharetra. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel.",
+      "Altrady’s advanced smart trading form adds flexibility and power to your trading. Smart trading that fits all different trading strategies.",
     img: {
-      url:
-        "https://images.prismic.io/altrady/9febf806-f5ff-4068-a11d-08131f6d0689_blog-img.png?auto=compress%2Cformat",
+      url: SmartHero,
     },
-    kicker: "kicker text",
-    title: "Feature name",
+    kicker: "Smart trading",
+    title: "Most powerful entry form with advanced automation features",
   },
   {
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuntlabore et dolore magna aliqua. Porttitor eget dolor morbi non arcu risus quis varius. Lorem sed risus ultricies tristique nulla. Egestas quis ipsum suspendisse ultrices gravida dictum fusce.\n\nEgestas sed tempus urna et pharetra. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel.",
+      "No matter how many trades you make, with Altrady you always know where you are in terms of profit and loss. We automatically calculate your past trades, including fees paid to exchanges.",
     img: {
-      url:
-        "https://images.prismic.io/altrady/9febf806-f5ff-4068-a11d-08131f6d0689_blog-img.png?auto=compress%2Cformat",
+      url: PositionsHero,
     },
-    kicker: "kicker text",
-    title: "Feature name",
+    kicker: "Positions with PNL",
+    title:
+      "Track the progress and performance for each position across all accounts",
   },
   {
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuntlabore et dolore magna aliqua. Porttitor eget dolor morbi non arcu risus quis varius. Lorem sed risus ultricies tristique nulla. Egestas quis ipsum suspendisse ultrices gravida dictum fusce.\n\nEgestas sed tempus urna et pharetra. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel.",
+      "One way to trade on all your top crypto exchanges. No more learning curve for using a new crypto exchange. Benefit from advanced features most exchanges don't offer.",
     img: {
-      url:
-        "https://images.prismic.io/altrady/9febf806-f5ff-4068-a11d-08131f6d0689_blog-img.png?auto=compress%2Cformat",
+      url: ExchangesHero,
     },
-    kicker: "kicker text",
-    title: "Feature name",
+    kicker: "Multi-exchange",
+    title: "Single platform to trade on multiple exchanges",
   },
   {
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuntlabore et dolore magna aliqua. Porttitor eget dolor morbi non arcu risus quis varius. Lorem sed risus ultricies tristique nulla. Egestas quis ipsum suspendisse ultrices gravida dictum fusce.\n\nEgestas sed tempus urna et pharetra. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel.",
+    content: `Every trader wants to act fast. It's essential to see the market's real-time picture and receive instant alerts of prices, trades, and order books.
+
+In Altrady, all price info and alerts are real-time, and you receive notifications on the desktop, mobile, and email.`,
     img: {
-      url:
-        "https://images.prismic.io/altrady/9febf806-f5ff-4068-a11d-08131f6d0689_blog-img.png?auto=compress%2Cformat",
+      url: RealtimeHero,
     },
-    kicker: "kicker text",
-    title: "Feature name",
+    kicker: "Real-time Market data",
+    title: "Stay up to date with the market",
   },
 ]
 export const reviewsData = {
@@ -317,58 +448,30 @@ export const softwareListData = {
 export const navResourceResourceData = [
   {
     content: "Act fast with real-time market updates.",
-    exc_img: {
-      url:
-        "https://altrady.cdn.prismic.io/altrady/4fcd8189-90ed-4b0e-976c-dcca305eb3ff_trading-analytics.svg",
-    },
     title: "Why Altrady?",
   },
   {
     content: "Learn how to quickly start trading with Altrady.",
-    exc_img: {
-      url:
-        "https://altrady.cdn.prismic.io/altrady/4fcd8189-90ed-4b0e-976c-dcca305eb3ff_trading-analytics.svg",
-    },
     title: "Crypto Trading Academy",
   },
   {
     content: "See upcoming, planned and released features.",
-    exc_img: {
-      url:
-        "https://altrady.cdn.prismic.io/altrady/4fcd8189-90ed-4b0e-976c-dcca305eb3ff_trading-analytics.svg",
-    },
     title: "Product roadmap",
   },
   {
     content: "Compare",
-    exc_img: {
-      url:
-        "https://altrady.cdn.prismic.io/altrady/4fcd8189-90ed-4b0e-976c-dcca305eb3ff_trading-analytics.svg",
-    },
     title: "Altrady vs Coinigy",
   },
   {
     content: "Read and learn about the crypto world.",
-    exc_img: {
-      url:
-        "https://altrady.cdn.prismic.io/altrady/4fcd8189-90ed-4b0e-976c-dcca305eb3ff_trading-analytics.svg",
-    },
     title: "Blog",
   },
   {
     content: "Technical information about the features.",
-    exc_img: {
-      url:
-        "https://altrady.cdn.prismic.io/altrady/4fcd8189-90ed-4b0e-976c-dcca305eb3ff_trading-analytics.svg",
-    },
     title: "Documentation",
   },
   {
     content: "Ask question about the application.",
-    exc_img: {
-      url:
-        "https://altrady.cdn.prismic.io/altrady/c6342371-5a12-4c62-b581-cf3b37286e74_support.svg",
-    },
     title: "Support",
   },
 ]

@@ -90,14 +90,46 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allPrismicCourseCategory {
+        nodes {
+          data {
+            name
+            description
+            text
+            slug
+            course_cover {
+              url
+            }
+          }
+          prismicId
+        }
+      }
+      allPrismicTutorial(sort: { order: ASC, fields: first_publication_date }) {
+        nodes {
+          data {
+            category {
+              id
+            }
+            name
+            duration
+            slug
+            description {
+              raw
+            }
+            video_embed
+          }
+        }
+      }
     }
   `)
 
   const exchangeTemplate = path.resolve(`src/pages/exchange.js`)
   const blogTemplate = path.resolve(`src/pages/blog-detail.js`)
   const featureTemplate = path.resolve(`src/pages/feature.js`)
+  const courseTemplate = path.resolve(`src/pages/course.js`)
+  const tutorialTemplate = path.resolve(`src/pages/tutorial.js`)
 
-  queryResults.data.allPrismicExchanges.nodes.forEach(node => {
+  queryResults.data?.allPrismicExchanges.nodes.forEach(node => {
     createPage({
       path: `/exchanges/${node.data.slug}`,
       component: exchangeTemplate,
@@ -107,7 +139,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  queryResults.data.allPrismicBlogPostApi.nodes.forEach(node => {
+  queryResults.data?.allPrismicBlogPostApi.nodes.forEach(node => {
     createPage({
       path: `/blog/${node.data.slug}`,
       component: blogTemplate,
@@ -117,7 +149,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  queryResults.data.allPrismicFeatures.nodes[0].data.feature_group.forEach(
+  queryResults.data?.allPrismicFeatures.nodes[0].data.feature_group.forEach(
     node => {
       createPage({
         path: `/${node.slug}`,
@@ -128,4 +160,24 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     }
   )
+
+  queryResults.data?.allPrismicCourseCategory.nodes.forEach(node => {
+    createPage({
+      path: `/academy/${node.data.slug}`,
+      component: courseTemplate,
+      context: {
+        course: node,
+      },
+    })
+  })
+
+  queryResults.data?.allPrismicTutorial.nodes.forEach(node => {
+    createPage({
+      path: `/academy/${node.data.slug}`,
+      component: tutorialTemplate,
+      context: {
+        tutorial: node,
+      },
+    })
+  })
 }

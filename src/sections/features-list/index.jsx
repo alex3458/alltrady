@@ -12,7 +12,7 @@ const FeaturesListSection = ({ title, content, featuresListData }) => {
           <FeatureItem
             key={idx}
             tag={item.kicker}
-            even={idx % 2 === 0 ? "" : " flex-row-reverse"}
+            even={idx % 2 === 0 ? " flex-row-reverse" : ""}
             {...item}
           />
         ))}

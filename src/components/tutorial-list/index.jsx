@@ -25,7 +25,7 @@ const TutorialList = ({ courseId, tutorialData }) => {
         {tutorialList.map((item, idx) => (
           <div key={idx} role="listitem" className="w-dyn-item">
             <Link
-              to={`/tutorial/${item.data.slug}`}
+              to={`/academy/${item.data.slug}`}
               className="video-item w-inline-block"
             >
               <div className="video-item-left pr-2">

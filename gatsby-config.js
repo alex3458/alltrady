@@ -65,15 +65,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/tutorial/*`] },
-    },
-    {
-      resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/category/*`] },
-    },
-    {
-      resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/course/*`] },
     },
   ],
 }

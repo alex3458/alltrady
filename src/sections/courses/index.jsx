@@ -27,7 +27,7 @@ const CourseSection = ({ title, content, categoryData, tutorialData }) => {
                 tutorialData={tutorialData}
               />
               <Link
-                to={`/course/${item.data.slug}`}
+                to={`/academy/${item.data.slug}`}
                 className="btn-explore-course"
               >
                 <div className="d-flex align-items-center">

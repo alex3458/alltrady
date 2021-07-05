@@ -5,14 +5,10 @@ import TutorialSection from "../sections/tutorials"
 import Seo from "../components/seo"
 import { graphql } from "gatsby"
 
-const Tutorial = ({ location, data }) => {
-  const currentSlug = location.pathname.split("/")[2]
-  const tutorialData = data?.allPrismicTutorial.nodes.filter(
-    item => item.data.slug === currentSlug
-  )
-  const currentTutorial = tutorialData[0] && tutorialData[0].data
-
-  const categoryId = tutorialData[0] && tutorialData[0].data.category.id
+const Tutorial = ({ pageContext, data }) => {
+  const { tutorial } = pageContext
+  const currentTutorial = tutorial?.data
+  const categoryId = currentTutorial?.category.id
   const currentCategory = data?.allPrismicCourseCategory.nodes.filter(
     item => item.prismicId === categoryId
   )

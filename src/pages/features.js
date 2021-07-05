@@ -4,7 +4,7 @@ import HeroSection from "../sections/hero"
 import AllFeatures from "../sections/all-features"
 import LevelUpCTASection from "../sections/level-up-cta"
 import TradingSoftwareSection from "../sections/trading-software"
-import { softwareListData } from "../utils/staticData"
+import { softwareListData, featuresHeroData } from "../utils/staticData"
 
 const title = `Level Up Now`
 const description = `Overwhelmed with the complexity of the cryptocurrency world?
@@ -13,7 +13,7 @@ Bring your trading experience to another level with the power of cryptocurrency 
 export default function Features() {
   return (
     <LandingPageLayout>
-      <HeroSection extraClsName="light-bk" />
+      <HeroSection extraClsName="light-bk" heroSectionData={featuresHeroData} />
       <AllFeatures />
       <LevelUpCTASection
         title={title}

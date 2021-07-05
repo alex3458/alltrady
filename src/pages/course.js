@@ -6,14 +6,12 @@ import CourseDetail from "../sections/courses/course-detail"
 import Seo from "../components/seo"
 import { graphql } from "gatsby"
 
-const Course = ({ location, data }) => {
-  const currentSlug = location.pathname.split("/")[2]
-  const categoryData = data?.allPrismicCourseCategory.nodes.filter(
-    item => item.data.slug === currentSlug
-  )
-  const courseId = categoryData[0] && categoryData[0].prismicId
+const Course = ({ pageContext, data }) => {
+  const { course } = pageContext
+  const categoryData = course?.data
+  console.log(categoryData)
   const tutorialData = data?.allPrismicTutorial.nodes.filter(
-    item => item.data.category.id === courseId
+    item => item.data.category.id === course?.prismicId
   )
   return (
     <AcademyPageLayout>
@@ -23,10 +21,10 @@ const Course = ({ location, data }) => {
       />
       <HeroComponent
         clsName="section hero academy"
-        headerContent={categoryData[0] && categoryData[0].data.name}
-        sectionContent={categoryData[0] && categoryData[0].data.description}
-        heroImg={categoryData[0] && categoryData[0].data.course_cover.url}
-        slug={categoryData[0] && categoryData[0].data.slug}
+        headerContent={categoryData?.name}
+        sectionContent={categoryData?.description}
+        heroImg={categoryData?.course_cover.url}
+        slug={categoryData?.slug}
         type="course"
       />
       <CourseDetail
@@ -41,20 +39,6 @@ const Course = ({ location, data }) => {
 
 export const query = graphql`
   query Course {
-    allPrismicCourseCategory {
-      nodes {
-        data {
-          name
-          description
-          text
-          slug
-          course_cover {
-            url
-          }
-        }
-        prismicId
-      }
-    }
     allPrismicTutorial(sort: { order: ASC, fields: first_publication_date }) {
       nodes {
         data {

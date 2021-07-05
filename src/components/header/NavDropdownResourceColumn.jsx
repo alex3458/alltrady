@@ -1,5 +1,5 @@
 import React from "react"
-import NavFeatureItem from "../common/NavFeatureItem"
+import NavResourceItem from "../common/NavResourceItem"
 
 const NavDropdownResourceColumn = ({ title, content }) => {
   return (
@@ -7,13 +7,8 @@ const NavDropdownResourceColumn = ({ title, content }) => {
       <h4 className="title">{title}</h4>
       <div className="row flex-column">
         {content &&
-          content.map(({ title, content, exc_img }, idx) => (
-            <NavFeatureItem
-              title={title}
-              content={content}
-              imgSrc={exc_img.url}
-              key={idx}
-            />
+          content.map(({ title, content }, idx) => (
+            <NavResourceItem title={title} content={content} key={idx} />
           ))}
       </div>
     </div>
