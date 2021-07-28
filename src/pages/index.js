@@ -69,7 +69,7 @@ export default function Home({ data }) {
       <LevelUpCTASection
         title={title}
         description={description}
-        button="Try for free"
+        button="Why Altrady?"
       />
       <TradingSoftwareSection {...softwareListData} />
     </LandingPageLayout>

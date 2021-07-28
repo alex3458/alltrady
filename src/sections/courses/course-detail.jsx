@@ -3,7 +3,6 @@ import SectionLayout from "../../layouts/SectionLayout"
 import TutorialList from "../../components/tutorial-list/full-tutorials"
 
 const CourseDetail = ({ categoryData, tutorialData }) => {
-  console.log(tutorialData)
   return (
     <SectionLayout sectionName="courses">
       <div className="grid-container">

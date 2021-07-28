@@ -177,6 +177,18 @@ h5 {
     }
   }
 }
+.coinigy-layout {
+  width: calc(100vw - 50px);
+  max-width: 612px;
+  text-align: center;
+  margin: auto;
+}
+.exchange-layout {
+  width: calc(100vw - 50px);
+  max-width: 632px;
+  text-align: center;
+  margin: auto;
+}
 .member {
   position: relative;
   margin: auto;
@@ -198,7 +210,7 @@ main {
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    // object-fit: cover;
     border-radius: 10px;
   }
 }
@@ -241,6 +253,9 @@ main {
   }
   &-white {
     color: $white;
+  }
+  &-red {
+    color: $yellowish;
   }
 }
 

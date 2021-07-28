@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import BlogPageLayout from "../layouts/BlogPageLayout"
 import BlogDetailList from "../sections/blog-detail-list"
+import Seo from "../components/seo"
 
 const Category = ({ location, data }) => {
   const currentSlug = location.pathname.split("/")[2]
@@ -14,6 +15,12 @@ const Category = ({ location, data }) => {
   )
   return (
     <BlogPageLayout>
+      <Seo
+        title={currentCatetgory[0]?.data.meta_title}
+        description={currentCatetgory[0]?.data.meta_description}
+        keywords={currentCatetgory[0]?.data.meta_keywords}
+        meta="nofollow, noindex"
+      />
       <h1 className="category-name">
         {currentCatetgory[0] && currentCatetgory[0].data.name}
       </h1>
@@ -51,6 +58,9 @@ export const query = graphql`
           slug
           color
           name
+          meta_title
+          meta_keywords
+          meta_description
         }
         prismicId
       }

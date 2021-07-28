@@ -1,12 +1,8 @@
 import React, { useState } from "react"
-import { BLogo } from "../../utils/imgLoader"
 import { Link } from "gatsby"
-import "../style.scss"
-import LinkPrimaryBtn from "../common/LinkPrimaryBtn"
-import NavAcademyTab from "../header/NavAcademyTab"
-
 import BodyClassName from "react-body-classname"
-import { AcademyIcon } from "../../utils/imgLoader"
+import "../style.scss"
+import { BLogo, AcademyIcon } from "../../utils/imgLoader"
 
 const AcademyHeader = () => {
   const [hambugerActive, setHambugerActiveState] = useState(false)
@@ -54,17 +50,22 @@ const AcademyHeader = () => {
             <div className="d-flex">
               <ul className="nav-items tablet-show">
                 <li className="nav-item">
-                  <Link to="#courses" className="nav-link">
+                  <Link to="/academy/courses" className="nav-link">
                     Courses
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="#download" className="nav-link">
+                  <Link to="/download" className="nav-link">
                     Download
                   </Link>
                 </li>
                 <li className="">
-                  <LinkPrimaryBtn to="#try-free">Try for Free</LinkPrimaryBtn>
+                  <a
+                    className="btn btn-primary "
+                    href="https://app.altrady.com/dashboard#/signup "
+                  >
+                    Try for Free
+                  </a>
                 </li>
               </ul>
 
@@ -81,24 +82,27 @@ const AcademyHeader = () => {
               </div>
               <ul className={navMenuClsName}>
                 <li
-                  className={"nav-item dropdown " + navMenuShow[1]}
+                  className={"nav-item" + navMenuShow[1]}
                   onClick={() => navMenuClick(1)}
                   onKeyDown={() => navMenuClick(1)}
                   role="presentation"
                 >
-                  <Link to="#courses" className="nav-link dropdown-item">
+                  <Link to="/academy/courses" className="nav-link">
                     Courses
-                    <span />
                   </Link>
-                  <NavAcademyTab />
                 </li>
                 <li className="nav-item">
-                  <Link to="#download" className="nav-link">
+                  <Link to="/download" className="nav-link">
                     Download
                   </Link>
                 </li>
                 <li className="action-btns">
-                  <LinkPrimaryBtn to="#try-free">Try for Free</LinkPrimaryBtn>
+                  <a
+                    className="btn btn-primary "
+                    href="https://app.altrady.com/dashboard#/signup "
+                  >
+                    Try for Free
+                  </a>
                 </li>
               </ul>
             </div>

@@ -1,8 +1,7 @@
 import React from "react"
 import { Elements } from "prismic-richtext"
-// import { Link as PrismicLink } from "prismic-reactjs"
-// import { Link } from "gatsby"
 import linkResolver from "./linkResovler"
+import { getLink, getRel } from "."
 // -- Function to add unique key to props
 const propsWithUniqueKey = function (props, key) {
   return Object.assign(props || {}, { key })
@@ -51,7 +50,8 @@ const htmlSerializer = function (type, element, content, children, key) {
       const targetAttr = element.data?.target
         ? { target: element.data?.target }
         : {}
-      const relAttr = element.data?.target ? { rel: "noopener" } : {}
+      const rel = getRel(children[0])
+      const relAttr = rel ? { rel: rel.rel } : { rel: "noopener" }
       props = Object.assign(
         {
           className: "link-class",
@@ -60,7 +60,11 @@ const htmlSerializer = function (type, element, content, children, key) {
         targetAttr,
         relAttr
       )
-      return React.createElement("a", propsWithUniqueKey(props, key), children)
+      return React.createElement(
+        "a",
+        propsWithUniqueKey(props, key),
+        getLink(children[0])
+      )
 
     case Elements.em: // Emphasis
       return React.createElement("em", propsWithUniqueKey(props, key), children)

@@ -6,6 +6,7 @@ import FeaturesListSection from "../sections/features-list"
 import LevelUpCTASection from "../sections/level-up-cta"
 import TradingSoftwareSection from "../sections/trading-software"
 import { softwareListData, featuresListData } from "../utils/staticData"
+import Seo from "../components/seo"
 
 const benefitContent = `With Altrady, you are at a huge advantage!
 Our tools and technology give you the easiest way to manage your trades and portfolio.`
@@ -20,9 +21,14 @@ const Exchange = ({ pageContext }) => {
   const { exchange } = pageContext
   const benefitSectionData = exchange?.data.benefit_group
   const exchangeName = exchange?.data.name
-
   return (
     <LandingPageLayout>
+      <Seo
+        title={exchange?.data.meta_title}
+        description={exchange?.data.meta_description}
+        keywords={exchange?.data.meta_keywords}
+        meta="nofollow, noindex"
+      />
       <ExchangeDetailHeroSection exchangeData={exchange?.data} />
       <BenefitSection
         title={exchangeName + " Exchange Benefits"}

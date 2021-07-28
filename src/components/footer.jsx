@@ -1,41 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
-
+import { Link } from "gatsby"
 import { BLogo, Facebook, Twitter, Discord, Telegram } from "../utils/imgLoader"
-
-const features = [
-  "Multi-exchange",
-  "Real-time market data",
-  "Advanced trading",
-  "Smart trading",
-  "Trading analytics",
-  "Positions with PnL",
-  "Multi-charts",
-  "Portfolio manager",
-  "Crypto Base Scanner",
-  "Custom layouts",
-  "Quick Scan",
-  "Notes",
-  "News",
-  "Watch lists",
-]
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
-    query Footer {
-      allPrismicExchanges(sort: { order: ASC, fields: data___position }) {
-        nodes {
-          data {
-            name
-            slug
-            upcoming
-            icon {
-              url
-            }
-          }
-        }
-      }
+    query FooterLayout {
       allPrismicPartners {
         nodes {
           data {
@@ -45,47 +15,72 @@ const Footer = () => {
                 url
               }
               description
+              slug
             }
+          }
+        }
+      }
+      allPrismicExchanges(sort: { order: ASC, fields: data___position }) {
+        nodes {
+          data {
+            name
+            slug
+            upcoming
+            icon {
+              url
+            }
+            partner
+          }
+        }
+      }
+      allPrismicFeatures(sort: { order: ASC, fields: data___priority }) {
+        nodes {
+          data {
+            name
+            slug
           }
         }
       }
     }
   `)
+  const features = data?.allPrismicFeatures.nodes
   const exchangeData = data?.allPrismicExchanges.nodes.filter(
     item => item.data.upcoming === false
   )
   const partners = data.allPrismicPartners.nodes[0].data.partner_group
   const featureList = features.map((item, index) => (
     <div key={index}>
-      <Link to="/"> {item} </Link>
+      <Link to={item.data.slug}> {item.data.name} </Link>
     </div>
   ))
 
   const exchangeList = exchangeData?.map((item, index) => (
-    <div key={index} className="d-flex align-items-center">
-      <img
-        alt={item.data.name}
-        src={item.data.icon.url}
-        className="exchange-img"
-      />
-      <Link to={`/exchanges/${item.data.slug}`}>{item.data.name}</Link>
-    </div>
+    <Link key={index} to={`/exchanges/${item.data.slug}`}>
+      <div className="d-flex align-items-center">
+        <img
+          alt={item.data.name}
+          src={item.data.icon.url}
+          className="exchange-img"
+        />
+        {item.data.name}
+      </div>
+    </Link>
   ))
 
   const partnerList = partners.map((item, index) => (
-    <div key={index} className="feature-item ">
-      <img
-        alt={item.name}
-        src={item.icon.url}
-        className="feature-item__image"
-      />
-      <div className="feature-item__content-wrapper">
-        <Link to="/" className="feature-item_title">
+    <a key={index} href={item.slug} className="feature-item_title">
+      <div className="feature-item ">
+        <img
+          alt={item.name}
+          src={item.icon.url}
+          className="feature-item__image"
+        />
+        <div className="feature-item__content-wrapper">
           {item.name}
-        </Link>
-        <p className="label feature-item_content">{item.description}</p>
+          <p className="label feature-item_content">{item.description}</p>
+        </div>
       </div>
-    </div>
+    </a>
   ))
 
   return (
@@ -130,16 +125,16 @@ const Footer = () => {
               <Link to="/privacy">Privacy Policy</Link>
             </div>
             <div className="social-links">
-              <a href="https://www.facebook.com">
+              <a href="https://www.facebook.com/altradyapp/ ">
                 <img alt="Facebook Link" src={Facebook} />
               </a>
-              <a href="https://twitter.com">
+              <a href="https://twitter.com/altradyapp ">
                 <img alt="Twitter Link" src={Twitter} />
               </a>
-              <a href="https://discord.com">
+              <a href="https://discord.gg/s5DuEhh">
                 <img alt="Discord Link" src={Discord} />
               </a>
-              <a href="https://telegram.org">
+              <a href="https://t.me/altrady">
                 <img alt="Telegram Link" src={Telegram} />
               </a>
             </div>

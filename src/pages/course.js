@@ -9,7 +9,6 @@ import { graphql } from "gatsby"
 const Course = ({ pageContext, data }) => {
   const { course } = pageContext
   const categoryData = course?.data
-  console.log(categoryData)
   const tutorialData = data?.allPrismicTutorial.nodes.filter(
     item => item.data.category.id === course?.prismicId
   )

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const BlogItem = ({ data, categories, size, clsName }) => {
   const { title, summary, date, thumbnail, category, slug } = data
-  let color = "green"
+  let color = ""
   let type = ""
   categories &&
     categories.forEach(item => {

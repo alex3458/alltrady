@@ -1,10 +1,8 @@
 import React, { useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { Logo } from "../../utils/imgLoader"
 import { Link } from "gatsby"
-import { useStaticQuery, graphql } from "gatsby"
 import "../style.scss"
-import LinkSecondBtn from "../common/LinkSecondBtn"
-import LinkPrimaryBtn from "../common/LinkPrimaryBtn"
 import NavFeatureTab from "./NavFeatureTab"
 import NavExchangesTab from "./NavExchangesTab"
 import NavResourcesTab from "./NavResourcesTab"
@@ -13,7 +11,7 @@ import { navResourceResourceData } from "../../utils/staticData"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
-    query Header {
+    query HeaderLayout {
       allPrismicPartners {
         nodes {
           data {
@@ -23,6 +21,7 @@ const Header = () => {
                 url
               }
               description
+              slug
             }
           }
         }
@@ -40,27 +39,22 @@ const Header = () => {
           }
         }
       }
-      allPrismicFeatures(
-        sort: { order: ASC, fields: data___feature_group___priority }
-      ) {
+      allPrismicFeatures(sort: { order: ASC, fields: data___priority }) {
         nodes {
           data {
-            feature_group {
-              name
-              slug
-              description
-              featured_in_navbar
-              type
-              icon {
-                url
-              }
+            name
+            slug
+            description
+            featured_in_navbar
+            type
+            img {
+              url
             }
           }
         }
       }
     }
   `)
-
   const exchangeData = data?.allPrismicExchanges.nodes.filter(
     item => item.data.upcoming === false
   )
@@ -68,17 +62,17 @@ const Header = () => {
     item => item.data.partner === true
   )
 
-  const featureData = data.allPrismicFeatures.nodes[0].data.feature_group.filter(
-    item => item.featured_in_navbar === true
+  const featureData = data.allPrismicFeatures.nodes.filter(
+    item => item.data.featured_in_navbar === true
   )
   const navFeatureDiscoverData = featureData.filter(
-    item => item.type === "Discover"
+    item => item.data.type === "Discover"
   )
   const navFeatureExcuteData = featureData.filter(
-    item => item.type === "Execute"
+    item => item.data.type === "Execute"
   )
   const navFeatureAnalyzeData = featureData.filter(
-    item => item.type === "Analyze"
+    item => item.data.type === "Analyze"
   )
 
   const navResourcePartnerData =
@@ -127,7 +121,12 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="">
-                  <LinkPrimaryBtn to="#try-free">Try for Free</LinkPrimaryBtn>
+                  <a
+                    className="btn btn-primary "
+                    href="https://app.altrady.com/dashboard#/signup "
+                  >
+                    Try for Free
+                  </a>
                 </li>
               </ul>
               <div
@@ -197,8 +196,18 @@ const Header = () => {
                   />
                 </li>
                 <li className="action-btns">
-                  <LinkSecondBtn to="#login">Log in</LinkSecondBtn>
-                  <LinkPrimaryBtn to="#try-free">Try for Free</LinkPrimaryBtn>
+                  <a
+                    className="btn btn-second"
+                    href="https://app.altrady.com/dashboard#/login "
+                  >
+                    Log in
+                  </a>
+                  <a
+                    className="btn btn-primary "
+                    href="https://app.altrady.com/dashboard#/signup "
+                  >
+                    Try for Free
+                  </a>
                 </li>
               </ul>
             </div>

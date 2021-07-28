@@ -11,9 +11,9 @@ const FeaturesListSection = ({ title, content, featuresListData }) => {
         {featuresListData?.map((item, idx) => (
           <FeatureItem
             key={idx}
-            tag={item.kicker}
+            tag={item.data.kicker}
             even={idx % 2 === 0 ? " flex-row-reverse" : ""}
-            {...item}
+            value={item}
           />
         ))}
       </div>

@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import LinkPrimaryBtn from "../../components/common/LinkPrimaryBtn"
 import LinkSecondBtn from "../../components/common/LinkSecondBtn"
 import "../style.scss"
 
@@ -34,11 +33,35 @@ const HeroComponent = ({
             <h1 className="section-title">{headerContent}</h1>
             <p className="section-content">{sectionContent}</p>
             <div className="btn-container">
-              {type !== "academy" && type !== "course" && (
-                <LinkPrimaryBtn to="/">Try for Free</LinkPrimaryBtn>
+              {!type && (
+                <a
+                  href="https://app.altrady.com/dashboard#/signup"
+                  className="btn btn-primary "
+                >
+                  Try for Free
+                </a>
               )}
               {sectionCaption && (
                 <LinkSecondBtn to="/why-altrady">Why Altrady?</LinkSecondBtn>
+              )}
+              {type === "feature" && (
+                <>
+                  <a
+                    className="btn btn-primary"
+                    href="https://app.altrady.com/dashboard#/signup "
+                  >
+                    Try now in Altrady
+                  </a>
+                  <LinkSecondBtn to="/features">See all features</LinkSecondBtn>
+                </>
+              )}
+              {type === "landing" && (
+                <a
+                  className="btn btn-primary"
+                  href="https://app.altrady.com/dashboard#/signup "
+                >
+                  Sign up now
+                </a>
               )}
             </div>
             <p className="section-caption caption">{sectionCaption}</p>

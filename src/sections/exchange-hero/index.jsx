@@ -1,5 +1,6 @@
 import React from "react"
 import HeroComponent from "../../components/hero"
+import { ExchangesHero } from "../../utils/imgLoader"
 import "../style.scss"
 
 const sectionContent = `You can choose from one of the top bitcoin cryptocurrency exchanges.
@@ -13,6 +14,7 @@ const ExchangeHeroSection = ({ extraClsName }) => {
       headerContent={headerContent}
       sectionContent={sectionContent}
       kickerText="Multiple Exchanges. One platform"
+      heroImg={ExchangesHero}
     />
   )
 }

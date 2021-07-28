@@ -10,7 +10,7 @@ const CoinigyHero = ({
 }) => {
   return (
     <section className={clsName}>
-      <div className="layout-container">
+      <div className="coinigy-layout">
         <div className="text-center">
           <p className="kicker">{kickerText}</p>
           <h1 className="section-title">{headerContent}</h1>
@@ -21,17 +21,8 @@ const CoinigyHero = ({
             </Link>
           </div>
         </div>
-        <div className="row">
-          <div className="col-lg-6">
-            <div className="hero-img-container img-container">
-              <img src={heroImg} alt={headerContent} />
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <div className="hero-img-container img-container">
-              <img src={heroImg} alt={headerContent} />
-            </div>
-          </div>
+        <div className="hero-img-container img-container">
+          <img src={heroImg} alt={headerContent} />
         </div>
       </div>
     </section>

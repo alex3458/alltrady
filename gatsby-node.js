@@ -7,6 +7,10 @@ exports.createPages = async ({ graphql, actions }) => {
       allPrismicExchanges(sort: { order: ASC, fields: data___position }) {
         nodes {
           data {
+            meta_title
+            meta_keywords
+            meta_description
+            flag_page
             name
             type_group {
               support
@@ -31,6 +35,10 @@ exports.createPages = async ({ graphql, actions }) => {
       allPrismicBlogPostApi(sort: { fields: data___date, order: DESC }) {
         nodes {
           data {
+            meta_title
+            meta_keywords
+            meta_description
+            flag_page
             title
             slug
             featured
@@ -66,28 +74,54 @@ exports.createPages = async ({ graphql, actions }) => {
               url
               alt
             }
+          }
+          last_publication_date
+        }
+      }
+      allPrismicFeatures(sort: { order: ASC, fields: data___priority }) {
+        nodes {
+          data {
             meta_title
             meta_keywords
             meta_description
-          }
-        }
-      }
-      allPrismicFeatures(
-        sort: { order: ASC, fields: data___feature_group___priority }
-      ) {
-        nodes {
-          data {
+            flag_page
+            description
+            name
+            slug
+            featured_in_navbar
+            content
             feature_group {
-              name
-              slug
-              description
-              featured_in_navbar
-              type
+              content
+              header
               icon {
+                url
+                alt
+              }
+              kicker
+            }
+            header
+            img {
+              url
+              alt
+            }
+            icon {
+              alt
+              url
+            }
+            other_features {
+              title
+              desc
+              url
+              icon {
+                alt
                 url
               }
             }
+            section_title
+            type
+            kicker
           }
+          last_publication_date
         }
       }
       allPrismicCourseCategory {
@@ -95,6 +129,7 @@ exports.createPages = async ({ graphql, actions }) => {
           data {
             name
             description
+            flag_page
             text
             slug
             course_cover {
@@ -107,6 +142,10 @@ exports.createPages = async ({ graphql, actions }) => {
       allPrismicTutorial(sort: { order: ASC, fields: first_publication_date }) {
         nodes {
           data {
+            flag_page
+            meta_title
+            meta_keywords
+            meta_description
             category {
               id
             }
@@ -118,6 +157,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             video_embed
           }
+          last_publication_date
         }
       }
     }
@@ -129,7 +169,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const courseTemplate = path.resolve(`src/pages/course.js`)
   const tutorialTemplate = path.resolve(`src/pages/tutorial.js`)
 
-  queryResults.data?.allPrismicExchanges.nodes.forEach(node => {
+  queryResults.data.allPrismicExchanges.nodes.forEach(node => {
     createPage({
       path: `/exchanges/${node.data.slug}`,
       component: exchangeTemplate,
@@ -139,7 +179,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  queryResults.data?.allPrismicBlogPostApi.nodes.forEach(node => {
+  queryResults.data.allPrismicBlogPostApi.nodes.forEach(node => {
     createPage({
       path: `/blog/${node.data.slug}`,
       component: blogTemplate,
@@ -149,19 +189,17 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  queryResults.data?.allPrismicFeatures.nodes[0].data.feature_group.forEach(
-    node => {
-      createPage({
-        path: `/${node.slug}`,
-        component: featureTemplate,
-        context: {
-          feature: node,
-        },
-      })
-    }
-  )
+  queryResults.data.allPrismicFeatures.nodes.forEach(node => {
+    createPage({
+      path: `${node.data.slug}`,
+      component: featureTemplate,
+      context: {
+        feature: node,
+      },
+    })
+  })
 
-  queryResults.data?.allPrismicCourseCategory.nodes.forEach(node => {
+  queryResults.data.allPrismicCourseCategory.nodes.forEach(node => {
     createPage({
       path: `/academy/${node.data.slug}`,
       component: courseTemplate,
@@ -171,7 +209,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  queryResults.data?.allPrismicTutorial.nodes.forEach(node => {
+  queryResults.data.allPrismicTutorial.nodes.forEach(node => {
     createPage({
       path: `/academy/${node.data.slug}`,
       component: tutorialTemplate,

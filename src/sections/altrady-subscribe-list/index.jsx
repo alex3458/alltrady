@@ -1,7 +1,14 @@
 import React from "react"
-import FeatureItem from "../../components/common/FeatureItem"
+import SupportItem from "../../components/common/SupportItem"
 import SectionHeader from "../../components/common/SectionHeader"
 import SectionLayout from "../../layouts/SectionLayout"
+import {
+  AdjustMotifications,
+  HomeHero,
+  Presets,
+  RealtimeHero,
+  Track,
+} from "../../utils/imgLoader"
 
 const altradySubscribeData = [
   {
@@ -17,6 +24,9 @@ const altradySubscribeData = [
         content: `We do this by equipping you with the right tools like Base Scanner and Quick Scanner so you can create a sense of predictability in market movements and make the right trading decisions for better profits.`,
       },
     ],
+    img: {
+      url: Track,
+    },
   },
   {
     title: `Altrady lets you save time, so you can do other things.`,
@@ -31,6 +41,9 @@ const altradySubscribeData = [
         content: `Features like real-time crypto alerts and automated trading lets you monitor markets and trade crypto even when you are asleep or spending time with family.`,
       },
     ],
+    img: {
+      url: AdjustMotifications,
+    },
   },
   {
     title: `Altrady makes trading simple, for your convenience.`,
@@ -48,6 +61,9 @@ const altradySubscribeData = [
         content: `Use Altrady’s portfolio manager to see the growth of your assets in different exchange wallets.`,
       },
     ],
+    img: {
+      url: Presets,
+    },
   },
   {
     title: `Altrady gives accurate information, so you can make objective trading decisions.`,
@@ -62,6 +78,9 @@ const altradySubscribeData = [
         content: `Altrady neutralizes trading emotions so you can make strategic and objective trading decisions.`,
       },
     ],
+    img: {
+      url: RealtimeHero,
+    },
   },
   {
     title: `Altrady equips you with powerful tools, so you can grow in experience and expertise.`,
@@ -79,6 +98,9 @@ const altradySubscribeData = [
         content: `Through Altrady’s innovative trading tools, you can grow as a crypto trader who can efficiently use the available technology to his or her advantage.`,
       },
     ],
+    img: {
+      url: HomeHero,
+    },
   },
 ]
 
@@ -88,7 +110,7 @@ const AltradySubscribeListSection = ({ title, content }) => {
       <SectionHeader title={title} content={content} />
       <div className="cryptor-content-wrapper">
         {altradySubscribeData.map((item, idx) => (
-          <FeatureItem
+          <SupportItem
             key={idx}
             even={idx % 2 === 0 ? "" : " flex-row-reverse"}
             {...item}

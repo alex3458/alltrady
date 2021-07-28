@@ -24,10 +24,10 @@
               "label": "Description"
             }
           },
-          "url": {
+          "slug": {
             "type": "Text",
             "config": {
-              "label": "URL"
+              "label": "Slug"
             }
           }
         },

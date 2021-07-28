@@ -17,6 +17,7 @@ const Blog = ({ data }) => {
       <Seo
         title="Altrady Crypto Trading News"
         description="Altrady Crypto Trading News. Learn to crypto trade with our resources. Bitcoin and altcoins trading."
+        slug="/blog"
       />
       <div className="layout-container">
         <BlogHeroSection blogData={blogHeaderData} categories={categories} />

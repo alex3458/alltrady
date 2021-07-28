@@ -1,31 +1,25 @@
 import React, { useState } from "react"
-import { Logo } from "../../utils/imgLoader"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
-import "../style.scss"
-import LinkPrimaryBtn from "../common/LinkPrimaryBtn"
 import NavFeatureTab from "../header/NavFeatureTab"
 import NavCategoryTab from "../header/NavCategoryTab"
 import BodyClassName from "react-body-classname"
-import { BlogIcon } from "../../utils/imgLoader"
+import { Logo, BlogIcon } from "../../utils/imgLoader"
+import "../style.scss"
 
 const BlogHeader = () => {
   const data = useStaticQuery(graphql`
     query BlogHeader {
-      allPrismicFeatures(
-        sort: { order: ASC, fields: data___feature_group___priority }
-      ) {
+      allPrismicFeatures(sort: { order: ASC, fields: data___priority }) {
         nodes {
           data {
-            feature_group {
-              name
-              slug
-              description
-              featured_in_navbar
-              type
-              icon {
-                url
-              }
+            name
+            slug
+            description
+            featured_in_navbar
+            type
+            img {
+              url
             }
           }
         }
@@ -45,17 +39,17 @@ const BlogHeader = () => {
     }
   `)
 
-  const featureData = data.allPrismicFeatures.nodes[0].data.feature_group.filter(
-    item => item.featured_in_navbar === true
+  const featureData = data.allPrismicFeatures.nodes.filter(
+    item => item.data.featured_in_navbar === true
   )
   const navFeatureDiscoverData = featureData.filter(
-    item => item.type === "Discover"
+    item => item.data.type === "Discover"
   )
   const navFeatureExcuteData = featureData.filter(
-    item => item.type === "Execute"
+    item => item.data.type === "Execute"
   )
   const navFeatureAnalyzeData = featureData.filter(
-    item => item.type === "Analyze"
+    item => item.data.type === "Analyze"
   )
   const navCategoryData = data.allPrismicBlogCategory.nodes
 
@@ -110,7 +104,12 @@ const BlogHeader = () => {
                   </Link>
                 </li>
                 <li className="">
-                  <LinkPrimaryBtn to="#try-free">Try for Free</LinkPrimaryBtn>
+                  <a
+                    className="btn btn-primary "
+                    href="https://app.altrady.com/dashboard#/signup "
+                  >
+                    Try for Free
+                  </a>
                 </li>
               </ul>
 
@@ -160,7 +159,12 @@ const BlogHeader = () => {
                   <NavCategoryTab navCategoryData={navCategoryData} />
                 </li>
                 <li className="action-btns">
-                  <LinkPrimaryBtn to="#try-free">Try for Free</LinkPrimaryBtn>
+                  <a
+                    className="btn btn-primary "
+                    href="https://app.altrady.com/dashboard#/signup "
+                  >
+                    Try for Free
+                  </a>
                 </li>
               </ul>
             </div>

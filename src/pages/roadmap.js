@@ -6,6 +6,7 @@ import TradeNowCTA from "../sections/trade-now-cta"
 import LevelUpCTASection from "../sections/level-up-cta"
 import SectionLayout from "../layouts/SectionLayout"
 import SectionHeader from "../components/common/SectionHeader"
+import { HomeHero } from "../utils/imgLoader"
 
 const headerContent = `Altrady roadmap`
 const sectionContent = `We’re here for the long term. Our product roadmap helps us share what we’re working on next and the direction that we’re taking our business in.`
@@ -25,19 +26,27 @@ const recentlyReleased = {
 const RoadmapList = ({ value }) => {
   return (
     <div className="comeup-item">
-      <h4>{value.name}</h4>
-      <p className="quarter-year my-2">{value.quarter_year}</p>
-      <p className="comeup-item-text">{value.description}</p>
+      <h4>{value.data.title}</h4>
+      <p className="quarter-year my-2">{value.data.quarter_year}</p>
+      <p className="comeup-item-text">{value.data.content}</p>
     </div>
   )
 }
 
 const Roadmap = ({ data }) => {
-  const comingupData = data.allPrismicRoadmap.nodes[0].data.comeup_group
-  const activeList = comingupData.filter(item => item.status === "Development")
-  const plannedList = comingupData.filter(item => item.status === "Researching")
-  const backlogList = comingupData.filter(item => item.status === "Backlog")
-  const releasedList = comingupData.filter(item => item.status === "Released")
+  const comingupData = data.allPrismicRoadmap.nodes
+  const activeList = comingupData.filter(
+    item => item.data.status === "Development"
+  )
+  const plannedList = comingupData.filter(
+    item => item.data.status === "Researching"
+  )
+  const backlogList = comingupData.filter(
+    item => item.data.status === "Backlog"
+  )
+  const releasedList = comingupData.filter(
+    item => item.data.status === "Released"
+  )
   return (
     <LandingPageLayout>
       <HeroComponent
@@ -45,6 +54,7 @@ const Roadmap = ({ data }) => {
         headerContent={headerContent}
         sectionContent={sectionContent}
         kickerText="What’s next"
+        heroImg={HomeHero}
       />
       <TradeNowCTA
         title="Take Advantage Of The Fastest Crypto Trading Tool"
@@ -99,12 +109,10 @@ export const query = graphql`
     allPrismicRoadmap {
       nodes {
         data {
-          comeup_group {
-            status
-            quarter_year
-            name
-            description
-          }
+          status
+          quarter_year
+          title
+          content
         }
       }
     }

@@ -1,35 +1,38 @@
 import React from "react"
 import LandingPageLayout from "../layouts/LandingPageLayout"
-import HeroSection from "../sections/hero"
-import AllFeatures from "../sections/all-features"
-import BenefitSection from "../sections/benefit"
+import HeroComponent from "../components/hero"
+import SubFeatures from "../sections/sub-features"
+import FeatureOthers from "../sections/feature-others"
 import LevelUpCTASection from "../sections/level-up-cta"
-import TradingSoftwareSection from "../sections/trading-software"
-import { softwareListData, benefitSectionData } from "../utils/staticData"
 
-const benefitTitle = "Multiple Benefits. Single Platform."
-const benefitContent = `With Altrady, you are at a huge advantage!
-Our tools and technology give you the easiest way to manage your trades and portfolio.`
 const title = `Level Up Now`
 const description = `Overwhelmed with the complexity of the cryptocurrency world?
 Bring your trading experience to another level with the power of cryptocurrency trading software Altrady, your best bitcoin trading platform choice`
 
-export default function Feature() {
+export default function Feature({ pageContext }) {
+  const { feature } = pageContext
+  const featureData = feature?.data
   return (
     <LandingPageLayout>
-      <HeroSection extraClsName="light-bk" />
-      <AllFeatures />
-      <BenefitSection
-        title={benefitTitle}
-        content={benefitContent}
-        benefitSectionData={benefitSectionData}
+      <HeroComponent
+        clsName="section hero feature"
+        headerContent={featureData?.header}
+        sectionContent={featureData?.content}
+        kickerText={featureData?.kicker}
+        heroImg={featureData?.icon.url}
+        type="feature"
+      />
+      <SubFeatures featuresData={featureData?.feature_group} />
+      <FeatureOthers
+        title={featureData?.section_title}
+        featureOthers={featureData?.other_features}
       />
       <LevelUpCTASection
         title={title}
         description={description}
         button="Try for free"
+        bk=" blue-bk"
       />
-      <TradingSoftwareSection {...softwareListData} />
     </LandingPageLayout>
   )
 }

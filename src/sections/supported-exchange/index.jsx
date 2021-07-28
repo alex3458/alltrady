@@ -4,8 +4,7 @@ import ExchangesListItem from "../../components/exchanges-list-item"
 import SectionLayout from "../../layouts/SectionLayout"
 import { useStaticQuery, graphql } from "gatsby"
 
-const sectionContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-magna aliqua. Integer enim neque volutpat ac tincidunt vitae semper quis.`
+const sectionContent = `Altrady allows you to trade on multiple exchanges from the single interface. Pick what exchanges fit your needs.`
 
 const SupportedExchangeSection = () => {
   const data = useStaticQuery(graphql`

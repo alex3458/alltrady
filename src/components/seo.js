@@ -56,19 +56,21 @@ function SEO({ description, lang, meta, title, keywords }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ]
-        .concat({
-          name: `keywords`,
-          content: keywords,
-        })
-        .concat(meta)}
+        {
+          name: "robots",
+          content: meta ? meta : "follow, index",
+        },
+      ].concat({
+        name: `keywords`,
+        content: keywords,
+      })}
     />
   )
 }
 
 SEO.defaultProps = {
   lang: `en`,
-  meta: [],
+  meta: ``,
   keywords: ``,
   description: ``,
 }
@@ -76,7 +78,7 @@ SEO.defaultProps = {
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
+  meta: PropTypes.string,
   keywords: PropTypes.string,
   title: PropTypes.string,
 }

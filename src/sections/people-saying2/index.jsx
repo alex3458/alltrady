@@ -13,6 +13,7 @@ const PeopleSayingSection2 = ({ title, content, testimonial }) => {
             content={item.content1}
             title={item.title1}
             imgSrc={item.img.url}
+            url={item.url}
             key={idx}
           />
         ))}

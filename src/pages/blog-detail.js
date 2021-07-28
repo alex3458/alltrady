@@ -21,6 +21,7 @@ const BlogDetail = ({ pageContext, data }) => {
         title={blogDetail?.data.meta_title}
         description={blogDetail?.data.meta_description}
         keywords={blogDetail?.data.meta_keywords}
+        meta="nofollow, noindex"
       />
       <BlogDetailHero blogData={currentBlog} categories={categories} />
       <div className="layout-container">
@@ -44,9 +45,6 @@ export const query = graphql`
       nodes {
         data {
           color
-          meta_title
-          meta_keywords
-          meta_description
           icon {
             url
           }

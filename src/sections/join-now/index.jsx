@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 const title = `Join now`
 const content = `Manage Your Digital Assets Within One Interface`
@@ -9,9 +8,9 @@ const JoinNowSection = ({ type }) => {
       <h2 className="title">{title}</h2>
       <p className="lead-text">{content}</p>
       {type && (
-        <Link className="btn-academy-join" to="https://www.altrady.com">
+        <a className="btn-academy-join" href="https://www.altrady.com">
           Trade now with Altrady
-        </Link>
+        </a>
       )}
     </div>
   )

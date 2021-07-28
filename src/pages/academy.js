@@ -5,7 +5,7 @@ import CourseSection from "../sections/courses"
 import JoinNowSection from "../sections/join-now"
 import Seo from "../components/seo"
 import { graphql } from "gatsby"
-import { BlogImg } from "../utils/imgLoader"
+import { HomeHero } from "../utils/imgLoader"
 
 const headerContent = `Welcome to Altrady Crypto Trading Academy`
 const sectionContent = `Step by step, crypto trading tutorials to help you in your trading journey!`
@@ -26,7 +26,7 @@ const Academy = ({ data }) => {
         headerContent={headerContent}
         sectionContent={sectionContent}
         kickerText="Learn crypto trading"
-        heroImg={BlogImg}
+        heroImg={HomeHero}
         type="academy"
       />
       <CourseSection

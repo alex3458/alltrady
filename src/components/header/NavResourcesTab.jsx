@@ -1,7 +1,7 @@
 import React from "react"
 import NavDropdownResourceColumn from "./NavDropdownResourceColumn"
 import NavDropdownExchangeColumn from "./NavDropdownExchangeColumn"
-import NavDropdownFeatureColumn from "./NavDropdownFeatureColumn"
+import NavDropdownPartnerColumn from "./NavDropdownPartnerColumn"
 
 const NavResourcesTab = ({
   navResourceExchangeData,
@@ -16,7 +16,7 @@ const NavResourcesTab = ({
             title="Resources"
             content={navResourceResourceData}
           />
-          <NavDropdownFeatureColumn
+          <NavDropdownPartnerColumn
             title="Partners"
             content={navResourcePartnerData}
           />

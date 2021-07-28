@@ -6,7 +6,7 @@ const TradeNowCTA = ({ title, description, btn }) => {
     <div className="section-cta cryptor-trading-tool">
       <h2 className="title">{title}</h2>
       {description && <p className="lead-text">{description}</p>}
-      <LinkNormalBtn>{btn}</LinkNormalBtn>
+      {btn && <LinkNormalBtn>{btn}</LinkNormalBtn>}
     </div>
   )
 }

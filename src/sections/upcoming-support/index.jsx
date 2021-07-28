@@ -4,8 +4,7 @@ import SectionHeader from "../../components/common/SectionHeader"
 import UpcomingSupportItem from "../../components/upcoming-support-item"
 import SectionLayout from "../../layouts/SectionLayout"
 
-const content = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-magna aliqua. Integer enim neque volutpat ac tincidunt vitae semper quis.`
+const content = `Altrady is always growing. We’re adding new exchanges to the platform. Here is what’s coming next:`
 const UpcomingSupportSection = () => {
   const data = useStaticQuery(graphql`
     query UpcomingExchange {

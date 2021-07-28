@@ -1,5 +1,11 @@
 import React from "react"
-import { Feature1, Feature2, Feature3, Feature4 } from "../../utils/imgLoader"
+import {
+  Feature1,
+  Feature2,
+  Feature3,
+  Feature4,
+  Feature5,
+} from "../../utils/imgLoader"
 
 const sectionData = [
   {
@@ -14,6 +20,9 @@ const sectionData = [
   {
     imgSrc: Feature4,
   },
+  {
+    imgSrc: Feature5,
+  },
 ]
 
 const FeatureCTASection = () => {
@@ -21,10 +30,10 @@ const FeatureCTASection = () => {
     <div className="section-cta as-featured-in">
       <div className="layout-container text-center">
         <h5 className="title">As featured in:</h5>
-        <div className="row">
+        <div className="d-flex justify-content-center align-items-center flex-wrap">
           {sectionData.map(({ imgSrc }, idx) => (
-            <div className="col-lg-3 col-sm-6 section-item" key={idx}>
-              <img alt="featured in" src={imgSrc} className="feature-img" />
+            <div className="feature-img" key={idx}>
+              <img alt="featured in" src={imgSrc} />
             </div>
           ))}
         </div>

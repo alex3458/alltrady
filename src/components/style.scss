@@ -83,6 +83,7 @@
       content: url("../assets/imgs/drowdown-arrow-down.svg");
       position: absolute;
       right: 10px;
+      width: 8px;
       top: 50%;
       transform: translateY(-50%);
       @include mq("tablet-wide", max) {
@@ -95,6 +96,7 @@
         content: url("../assets/imgs/drowdown-arrow-down.svg");
         position: absolute;
         right: 45px;
+        width: 8px;
       }
     }
     &-content {
@@ -392,6 +394,9 @@
       color: black;
     }
   }
+}
+.btn-learn {
+  padding-left: 51px;
 }
 .nav-col {
   .title {
@@ -885,7 +890,8 @@
     .btn-learn-more {
       cursor: pointer;
       &::after {
-        margin-left: 13px;
+        right: -27px;
+        width: 14px;
         bottom: -2px;
         position: absolute;
         content: url("../assets/imgs/left-arrow-blue.svg");

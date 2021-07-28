@@ -1,5 +1,32 @@
 {
   "Main": {
+    "meta_title": {
+      "type": "Text",
+      "config": {
+        "label": "Meta Title"
+      }
+    },
+    "meta_description": {
+      "type": "Text",
+      "config": {
+        "label": "Meta Description"
+      }
+    },
+    "meta_keywords": {
+      "type": "Text",
+      "config": {
+        "label": "Meta Keywords"
+      }
+    },
+    "flag_page": {
+      "type": "Boolean",
+      "config": {
+        "placeholder_false": "include",
+        "placeholder_true": "exclude",
+        "default_value": false,
+        "label": "Flag Page"
+      }
+    },
     "icon": {
       "type": "Image",
       "config": {
@@ -46,24 +73,6 @@
         "label": "Upcoming"
       }
     },
-    "meta_title": {
-      "type": "Text",
-      "config": {
-        "label": "Meta Title"
-      }
-    },
-    "meta_description": {
-      "type": "Text",
-      "config": {
-        "label": "Meta Description"
-      }
-    },
-    "meta_keywords": {
-      "type": "Text",
-      "config": {
-        "label": "Meta Keywords"
-      }
-    },
     "benefit_group": {
       "type": "Group",
       "config": {
@@ -106,12 +115,7 @@
           "select_type": {
             "type": "Select",
             "config": {
-              "options": [
-                "Spot",
-                "Features",
-                "Margin*",
-                "Options*"
-              ],
+              "options": ["Spot", "Futures", "Margin*", "Options*"],
               "default_value": "Spot",
               "label": "Select Type",
               "placeholder": "Spot"

@@ -6,7 +6,16 @@ import FeatureItem from "../components/common/FeatureItem"
 import BinanceHeroSection from "../sections/binance-hero"
 import LinkPrimaryBtn from "../components/common/LinkPrimaryBtn"
 import FAQSection from "../sections/faq"
-import { BlogImg, BinanceLogo, AltradyLogo } from "../utils/imgLoader"
+import {
+  BinanceLogo,
+  AltradyLogo,
+  BeginnerHero,
+  PriceBreakingOut,
+  ExchangesHero,
+  SmartHero,
+  PortfolioHero,
+  MultichartHero,
+} from "../utils/imgLoader"
 
 const featuresSection = {
   title: "Benefits of Binance Trading Using the Altrady App",
@@ -14,44 +23,48 @@ const featuresSection = {
 }
 const featuresListData = [
   {
-    title: "Real-Time Cryptocurrency Alerts",
-    content: `Get accurate and real-time alerts up-to-the-second! With Altrady’s cryptocurrency alerts, you can automatically receive price alerts and catch profitable trades on your favorite Binance markets!`,
-    img: {
-      url:
-        "https://images.prismic.io/altrady/9febf806-f5ff-4068-a11d-08131f6d0689_blog-img.png?auto=compress%2Cformat",
+    data: {
+      header: "Real-Time Cryptocurrency Alerts",
+      content: `Get accurate and real-time alerts up-to-the-second! With Altrady’s cryptocurrency alerts, you can automatically receive price alerts and catch profitable trades on your favorite Binance markets!`,
+      icon: {
+        url: PriceBreakingOut,
+      },
     },
   },
   {
-    title: "Convenient Trading on Multiple Exchanges",
-    content: `No doubt about Binance’s reputation in the crypto sphere, but with Altrady, you can trade not just on Binance but also on other exchanges without any hassle at all. Spread out your risks and enjoy the many benefits of trading on Binance and other exchange platforms!`,
-    img: {
-      url:
-        "https://images.prismic.io/altrady/9febf806-f5ff-4068-a11d-08131f6d0689_blog-img.png?auto=compress%2Cformat",
+    data: {
+      header: "Convenient Trading on Multiple Exchanges",
+      content: `No doubt about Binance’s reputation in the crypto sphere, but with Altrady, you can trade not just on Binance but also on other exchanges without any hassle at all. Spread out your risks and enjoy the many benefits of trading on Binance and other exchange platforms!`,
+      icon: {
+        url: ExchangesHero,
+      },
     },
   },
   {
-    title: "Strategy-Boosting Trading Tools",
-    content: `Altrady is full of trading tools that can boost your trading strategy and give you advantageous results on Binance trading. Use Altrady’s Crypto Base Scanner and Quick Scanner to find profitable entry points in the market. Place advanced trading orders such as scaled ladders to maximize your wins and minimize your trading losses in the face of volatile crypto markets.`,
-    img: {
-      url:
-        "https://images.prismic.io/altrady/9febf806-f5ff-4068-a11d-08131f6d0689_blog-img.png?auto=compress%2Cformat",
+    data: {
+      header: "Strategy-Boosting Trading Tools",
+      content: `Altrady is full of trading tools that can boost your trading strategy and give you advantageous results on Binance trading. Use Altrady’s Crypto Base Scanner and Quick Scanner to find profitable entry points in the market. Place advanced trading orders such as scaled ladders to maximize your wins and minimize your trading losses in the face of volatile crypto markets.`,
+      icon: {
+        url: SmartHero,
+      },
     },
   },
   {
-    title: "Automatic Portfolio Tracker",
-    content: `Keep track of your Binance exchange wallet, and see how well your assets have been performing throughout your trading history. Altrady’s automatic portfolio manager gives you an updated and comprehensive summary of all your digital coins across multiple exchange wallets.`,
-    img: {
-      url:
-        "https://images.prismic.io/altrady/9febf806-f5ff-4068-a11d-08131f6d0689_blog-img.png?auto=compress%2Cformat",
+    data: {
+      header: "Automatic Portfolio Tracker",
+      content: `Keep track of your Binance exchange wallet, and see how well your assets have been performing throughout your trading history. Altrady’s automatic portfolio manager gives you an updated and comprehensive summary of all your digital coins across multiple exchange wallets.`,
+      icon: {
+        url: PortfolioHero,
+      },
     },
   },
-
   {
-    title: "Easy User Experience",
-    content: `Trading on Binance and other exchanges is a lot easier with Altrady! Everything you need to monitor markets, place orders, and track your performances are all on your Altrady dashboard. Trade from one exchange to another by simply toggling in between market menus and take advantage of Altrady’s charts to view multiple markets all at the same time on a single screen!`,
-    img: {
-      url:
-        "https://images.prismic.io/altrady/9febf806-f5ff-4068-a11d-08131f6d0689_blog-img.png?auto=compress%2Cformat",
+    data: {
+      header: "Easy User Experience",
+      content: `Trading on Binance and other exchanges is a lot easier with Altrady! Everything you need to monitor markets, place orders, and track your performances are all on your Altrady dashboard. Trade from one exchange to another by simply toggling in between market menus and take advantage of Altrady’s charts to view multiple markets all at the same time on a single screen!`,
+      icon: {
+        url: MultichartHero,
+      },
     },
   },
 ]
@@ -100,7 +113,7 @@ const Binance = () => {
         <h1 className="section-title">{headerContent}</h1>
         <p className="section-content">{sectionContent}</p>
         <div className="binance-img">
-          <img src={BlogImg} alt={headerContent} />
+          <img src={BeginnerHero} alt={headerContent} />
         </div>
       </section>
       <section className="section member">
@@ -127,7 +140,7 @@ const Binance = () => {
               key={idx}
               showCTABtn={false}
               even={idx % 2 === 0 ? "" : " flex-row-reverse"}
-              {...item}
+              value={item}
             />
           ))}
         </div>

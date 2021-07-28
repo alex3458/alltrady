@@ -1,26 +1,14 @@
-import {
-  HomeHero,
-  SmartHero,
-  PositionsHero,
-  ExchangesHero,
-  RealtimeHero,
-  AdvancedHero,
-  PortfolioHero,
-  TradingAnalyticsHero,
-  MultichartHero,
-  BasicHero,
-} from "./imgLoader"
-
 export const heroSectionData = {
   content:
     "Boost your trading with the all-in-one cryptocurrency trading software. Trade on multiple exchanges, track your performance, improve and get less emotional.\nBitcoin trading platform for beginners and expert traders.",
   description:
-    "Join over 40,000 productive crypto traders,\nthat trust the best bitcoin trading platform",
+    "Join over 50,000 productive crypto traders,\nthat trust the best bitcoin trading platform",
   header:
     "Altrady crypto trading platform helps you trade on multiple exchanges!",
   kicker: "Simple. Fast. Secure.",
   img: {
-    url: HomeHero,
+    url:
+      "https://images.prismic.io/altrady/55046d2a-1781-4644-9499-d533df55a864_1.+Multi-exchange+-+2.+Interface.png?auto=compress,format",
   },
 }
 export const featuresHeroData = {
@@ -29,7 +17,8 @@ Check Altrady's best crypto features, so you can trade bitcoins and altcoins eas
   header: "Trading Features For Bitcoin and Altcoin",
   kicker: "For traders, By traders",
   img: {
-    url: HomeHero,
+    url:
+      "https://images.prismic.io/altrady/55046d2a-1781-4644-9499-d533df55a864_1.+Multi-exchange+-+2.+Interface.png?auto=compress,format",
   },
 }
 export const benefitSection = {
@@ -41,7 +30,7 @@ export const benefitSectionData = [
   {
     title: "All-in-one trading platform",
     content:
-      "With Altrady, you are at a huge advantage!\nOur tools and technology give you the easiest way to manage your trades and portfolio.",
+      "Altrady is your ultimate crypto trading platform for managing trades and portfolio across multiple best crypto exchanges.",
     image: {
       url:
         "https://altrady.cdn.prismic.io/altrady/9013621d-3a1f-41ca-8c54-3f6dbbff022a_trading-platform.svg",
@@ -95,200 +84,111 @@ export const benefitSectionData = [
 ]
 export const featuresSection = {
   title: "Crypto trading platform features\nto fall in love with",
-  content:
-    "With Altrady, you are at a huge advantage!\nOur tools and technology give you the easiest way to manage your trades and portfolio.",
+  content: "Enjoy the powerful features of Altrady.",
 }
-export const featuresData = [
-  {
-    content:
-      "Altrady’s advanced smart trading form adds flexibility and power to your trading. Smart trading that fits all different trading strategies.",
-    img: {
-      url: SmartHero,
-    },
-    kicker: "Smart trading",
-    title: "Most powerful entry form with advanced automation features",
-  },
-  {
-    content:
-      "No matter how many trades you make, with Altrady you always know where you are in terms of profit and loss. We automatically calculate your past trades, including fees paid to exchanges.",
-    img: {
-      url: PositionsHero,
-    },
-    kicker: "Positions with PNL",
-    title:
-      "Track the progress and performance for each position across all accounts",
-  },
-  {
-    content:
-      "One way to trade on all your top crypto exchanges. No more learning curve for using a new crypto exchange. Benefit from advanced features most exchanges don't offer.",
-    img: {
-      url: ExchangesHero,
-    },
-    kicker: "Multi-exchange",
-    title: "Single platform to trade on multiple exchanges",
-  },
-  {
-    content: `Every trader wants to act fast. It's essential to see the market's real-time picture and receive instant alerts of prices, trades, and order books.
-
-In Altrady, all price info and alerts are real-time, and you receive notifications on the desktop, mobile, and email.`,
-    img: {
-      url: RealtimeHero,
-    },
-    kicker: "Real-time Market data",
-    title: "Stay up to date with the market",
-  },
-  {
-    content: `Default orders are fine, but with advanced orders you can create ladders, trailing stops and even one-cancels-the-other orders.`,
-    img: {
-      url: AdvancedHero,
-    },
-    kicker: "Advanced trading",
-    title: `Advanced trading`,
-  },
-  {
-    content: `After you connect your exchange accounts to Altrady, you’ll be able to track the changes in your portfolio.`,
-    img: {
-      url: PortfolioHero,
-    },
-    kicker: "Portfolio",
-    title: `Keep track of your assets across all exchanges`,
-  },
-  {
-    content: `The best cryptocurrency traders always stay on top of their performance. Improve your trading and see the progress in the long run.`,
-    img: {
-      url: TradingAnalyticsHero,
-    },
-    kicker: "Trading analytics",
-    title: `Analyze your trading quality`,
-  },
-  {
-    content: `With multiple charts on the same screen you can see the action on all of them at the same time.`,
-    img: {
-      url: MultichartHero,
-    },
-    kicker: "Multichart",
-    title: `Don’t miss a trade`,
-  },
-  {
-    content: `Enjoy the power and simplicity of Altrady,  saving your precious time.`,
-    img: {
-      url: BasicHero,
-    },
-    kicker: "Trading features",
-    title: `Buy and Sell with ease`,
-  },
-  {
-    content: `The best cryptocurrency traders always stay on top of their performance. Improve your trading and see the progress in the long run.`,
-    img: {
-      url: TradingAnalyticsHero,
-    },
-    kicker: "Watch lists",
-    title: `Keep your favorite markets organized`,
-  },
-  {
-    content: `The best cryptocurrency traders always stay on top of their performance. Improve your trading and see the progress in the long run.`,
-    img: {
-      url: TradingAnalyticsHero,
-    },
-    kicker: "Trading analytics",
-    title: `Analyze your trading quality`,
-  },
-  {
-    content: `The best cryptocurrency traders always stay on top of their performance. Improve your trading and see the progress in the long run.`,
-    img: {
-      url: TradingAnalyticsHero,
-    },
-    kicker: "Trading analytics",
-    title: `Analyze your trading quality`,
-  },
-  {
-    content: `The best cryptocurrency traders always stay on top of their performance. Improve your trading and see the progress in the long run.`,
-    img: {
-      url: TradingAnalyticsHero,
-    },
-    kicker: "Trading analytics",
-    title: `Analyze your trading quality`,
-  },
-]
 export const featuresListData = [
   {
-    content:
-      "Altrady’s advanced smart trading form adds flexibility and power to your trading. Smart trading that fits all different trading strategies.",
-    img: {
-      url: SmartHero,
+    data: {
+      content:
+        "Altrady’s advanced smart trading form adds flexibility and power to your trading. Smart trading that fits all different trading strategies.",
+      icon: {
+        url:
+          "https://images.prismic.io/altrady/270d8568-64f0-4d17-ae64-bace698313b1_6.+Smart+trading+-+1.+Smart+Hero.png?auto=compress,format",
+      },
+      kicker: "Smart trading",
+      header: "Most powerful entry form with advanced automation features",
+      slug: "automated-crypto-trading",
     },
-    kicker: "Smart trading",
-    title: "Most powerful entry form with advanced automation features",
   },
   {
-    content:
-      "No matter how many trades you make, with Altrady you always know where you are in terms of profit and loss. We automatically calculate your past trades, including fees paid to exchanges.",
-    img: {
-      url: PositionsHero,
+    data: {
+      content:
+        "No matter how many trades you make, with Altrady you always know where you are in terms of profit and loss. We automatically calculate your past trades, including fees paid to exchanges.",
+      icon: {
+        url:
+          "https://images.prismic.io/altrady/eb203b4f-0780-4d87-a34f-d018db0ff95a_8.+Positions+-+1.+Positions+Hero.png?auto=compress,format",
+      },
+      kicker: "Positions with PNL",
+      header:
+        "Track the progress and performance for each position across all accounts",
+      slug: "positions-pnl",
     },
-    kicker: "Positions with PNL",
-    title:
-      "Track the progress and performance for each position across all accounts",
   },
   {
-    content:
-      "One way to trade on all your top crypto exchanges. No more learning curve for using a new crypto exchange. Benefit from advanced features most exchanges don't offer.",
-    img: {
-      url: ExchangesHero,
+    data: {
+      content:
+        "One way to trade on all your top crypto exchanges. No more learning curve for using a new crypto exchange. Benefit from advanced features most exchanges don't offer.",
+      icon: {
+        url:
+          "https://images.prismic.io/altrady/099eeea2-4d70-47ef-92bd-129e29025e22_1.+Multi-exchange+-+1.+Exchanges+Hero.png?auto=compress,format",
+      },
+      kicker: "Multi-exchange",
+      header: "Single platform to trade on multiple exchanges",
+      slug: "multi-cryptocurrency-exchanges",
     },
-    kicker: "Multi-exchange",
-    title: "Single platform to trade on multiple exchanges",
   },
   {
-    content: `Every trader wants to act fast. It's essential to see the market's real-time picture and receive instant alerts of prices, trades, and order books.
-
-In Altrady, all price info and alerts are real-time, and you receive notifications on the desktop, mobile, and email.`,
-    img: {
-      url: RealtimeHero,
+    data: {
+      content: `Every trader wants to act fast. It's essential to see the market's real-time picture and receive instant alerts of prices, trades, and order books.
+  
+  In Altrady, all price info and alerts are real-time, and you receive notifications on the desktop, mobile, and email.`,
+      icon: {
+        url:
+          "https://images.prismic.io/altrady/2312c1c9-3af2-4d98-b118-419444c9c75d_2.+Real-time+market+data+-+1.+Real-time+Hero.png?auto=compress,format",
+      },
+      kicker: "Real-time Market data",
+      header: "Stay up to date with the market",
+      slug: "real-time-market-data",
     },
-    kicker: "Real-time Market data",
-    title: "Stay up to date with the market",
   },
 ]
 export const reviewsData = {
+  title: "Reviews from Trustpilot",
   content:
     "We proud of what our users say about their experience with Altrady.",
-  title: "Reviews from Trustpilot",
   review_item: [
     {
-      username: "Username",
-      review:
-        "It's the best crypto trading platform out there. Especially when you want to manage your assets over multiple exchanges.\n\nApp provides some handy tools to place trades e.g. using a ladder and to analyses your portfolio growth.",
+      username: "Cristi Duma",
+      review: `Altrady is a complete crypto trading platform made by traders for traders.
+The UI is clean and highly customizable. The UX is simple and intuitive.
+It integrates some of the most popular exchanges into one easy to use interface.
+
+The dev and support team are fantastic and they are continuously developing and improving the platform.
+This is, by far, the best crypto trading tool on the market and it's getting better and better every day.
+Well done!`,
       marks: 5,
     },
     {
-      username: "Username",
-      review:
-        "It's the best crypto trading platform out there. Especially when you want to manage your assets over multiple exchanges.\n\nApp provides some handy tools to place trades e.g. using a ladder and to analyses your portfolio growth.",
+      username: "Aristide",
+      review: `Pretty good software, the UI/UX is amazing, the base scanner / quick scan is a pretty usefull tool, everything to get you started trading crypto. The dev team is amazing, the support is amazing, the only missing thing is some advanced trading features but as we can see this is actively developed with a lot of efforts so this can only get better & better, can't wait to see the futures updates ! :D`,
       marks: 5,
     },
     {
-      username: "Username",
+      username: "Chris Bearden",
       review:
-        "It's the best crypto trading platform out there. Especially when you want to manage your assets over multiple exchanges.\n\nApp provides some handy tools to place trades e.g. using a ladder and to analyses your portfolio growth.",
+        "A+ experience with the trading platform and the support. They are very professional and helpful in getting you setup and started off to trading.",
       marks: 5,
     },
     {
-      username: "Username",
-      review:
-        "It's the best crypto trading platform out there. Especially when you want to manage your assets over multiple exchanges.\n\nApp provides some handy tools to place trades e.g. using a ladder and to analyses your portfolio growth.",
+      username: "Marius",
+      review: `I have used several tools in the last year (varying from Tradedash, Hypertrader, Binance App/web, Bitvavo etc.), and I came to Altrady because (in the end) it had additional functionality (base scanner, QFL) and it used a lot less CPU power than others tools out there.
+
+The support is absolutely good and I think I have really good value for my money.`,
       marks: 5,
     },
     {
-      username: "Username",
+      username: "Philip Meir",
       review:
-        "It's the best crypto trading platform out there. Especially when you want to manage your assets over multiple exchanges.\n\nApp provides some handy tools to place trades e.g. using a ladder and to analyses your portfolio growth.",
+        "Awesome trading platform, Their support is great as well, Benoist from AT always brings a solution for any problem! Every question you have or suggestion they take it serious, big thumbs up for the Team! 👍",
       marks: 5,
     },
     {
-      username: "Username",
-      review:
-        "It's the best crypto trading platform out there. Especially when you want to manage your assets over multiple exchanges.\n\nApp provides some handy tools to place trades e.g. using a ladder and to analyses your portfolio growth.",
+      username: "Jan van der Pas",
+      review: `It's the best crypto trading platform out there. Especially when you want to manage your assets over multiple exchanges.
+
+App provides some handy tools to place trades e.g. using a ladder and to analyses your portfolio growth.
+
+It also has the function to automatically scan for drops and notify you. I use it to trade automatically. It's a bit of work to set up automatic trading, but I doubled my value on Kucoin with it.`,
       marks: 5,
     },
   ],
@@ -340,6 +240,7 @@ export const testimonials2 = {
         url:
           "https://altrady.cdn.prismic.io/altrady/33472859-c510-496a-af46-3a31d61cc516_academy-types1.svg",
       },
+      url: "/crypto-trading-software-for-beginners",
     },
     {
       content1:
@@ -349,6 +250,7 @@ export const testimonials2 = {
         url:
           "https://altrady.cdn.prismic.io/altrady/95d644f7-3003-4c18-9a80-f3cd2da18e49_academy-types2.svg",
       },
+      url: "/crypto-trading-software-for-intermediates",
     },
     {
       content1:
@@ -358,6 +260,7 @@ export const testimonials2 = {
         url:
           "https://altrady.cdn.prismic.io/altrady/18b81772-4719-4038-a717-6ab848f2662d_academy-types3.svg",
       },
+      url: "/crypto-trading-software-for-professionals",
     },
   ],
 }
@@ -386,8 +289,6 @@ export const testimonials3 = {
   ],
 }
 export const benoistTestimonial = {
-  content:
-    "Professional traders prefer not to share their photos and names in crypto world.\nBut you can definitely find them in Altrady community.",
   img: {
     url:
       "https://images.prismic.io/altrady/9d757748-799e-4f00-a2b1-e7521180e209_benoist.png?auto=compress%2Cformat",
@@ -401,7 +302,7 @@ export const benoistTestimonial = {
 export const bestCryptorSection = {
   title: "Best crypto trading articles",
   content:
-    "We are export constantly adding articles about the crypto industry's best trading platforms and practices.",
+    "We are constantly adding articles about the crypto industry's best trading platforms and practices.",
 }
 export const softwareListData = {
   title: "Altrady crypto trading software works where you work",
@@ -414,6 +315,7 @@ export const softwareListData = {
       },
       os: "Windows",
       os_description: "Windows 8 and higher",
+      url: "/download/win",
     },
     {
       cta_text: "Download",
@@ -423,6 +325,7 @@ export const softwareListData = {
       },
       os: "Mac OS",
       os_description: "Yosemite or higher",
+      url: "/download/mac",
     },
     {
       cta_text: "Download",
@@ -433,6 +336,7 @@ export const softwareListData = {
       os: "Linux",
       os_description:
         "Ubuntu (other distros can work, but require gnome-keyring)",
+      url: "/download/linux",
     },
     {
       cta_text: "Open now",
@@ -442,6 +346,7 @@ export const softwareListData = {
       },
       os: "Browser",
       os_description: "Windows 8 and higher",
+      url: "https://app.altrady.com/dashboard  ",
     },
   ],
 }
@@ -449,29 +354,36 @@ export const navResourceResourceData = [
   {
     content: "Act fast with real-time market updates.",
     title: "Why Altrady?",
+    slug: "/why-altrady",
   },
   {
     content: "Learn how to quickly start trading with Altrady.",
     title: "Crypto Trading Academy",
+    slug: "/academy",
   },
   {
     content: "See upcoming, planned and released features.",
     title: "Product roadmap",
+    slug: "/roadmap",
   },
   {
     content: "Compare",
     title: "Altrady vs Coinigy",
+    slug: "/coinigy",
   },
   {
     content: "Read and learn about the crypto world.",
     title: "Blog",
+    slug: "/blog",
   },
   {
     content: "Technical information about the features.",
     title: "Documentation",
+    slug: "https://support.altrady.com/en/",
   },
   {
     content: "Ask question about the application.",
     title: "Support",
+    slug: "mailto:support@altrady.com",
   },
 ]

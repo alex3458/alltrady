@@ -8,7 +8,20 @@ import ReviewsSection from "../sections/reviews/Reviews"
 import PeopleSayingSection from "../sections/people-saying4"
 import AnnualPlanSection from "../sections/annual-plan"
 import Seo from "../components/seo"
-import { BlogImg } from "../utils/imgLoader"
+import {
+  BoughtSold,
+  BreakEven,
+  CBSHero,
+  HomeHero,
+  LayoutsHero,
+  MultichartHero,
+  NotesHero,
+  PastTrades,
+  PortfolioHero,
+  PriceBreakingOut,
+  TakeProfit,
+  Track,
+} from "../utils/imgLoader"
 import { reviewsData, testimonials3 } from "../utils/staticData"
 import CompareComponent from "../components/compare"
 
@@ -27,14 +40,14 @@ const Coinigy = () => {
           headerContent={headerContent}
           sectionContent={sectionContent}
           kickerText="Altrady vs coinigy"
-          heroImg={BlogImg}
+          heroImg={HomeHero}
         />
         <section className="section comparison bg-gray">
           <ComparisonContent
             kickerText="Alerts"
             title={`Altrady vs Coinigy Altrady's Real-Time Crypto Alerts Help You Achieve Your Profit Goals`}
             content="Receive your alerts in seconds and not minutes"
-            img={BlogImg}
+            img={PriceBreakingOut}
           />
           <CompareComponent
             desc={`Altrady’s Real-Time Crypto Alerts Help You Achieve Your Profit Goals`}
@@ -68,7 +81,7 @@ const Coinigy = () => {
 Coinigy Versus Altrady`}
             content="Altrady’s Trading Analytics Help You Analyze Indicators and Evaluate Your Trading Performance
             for Better Decision-Making"
-            img={BlogImg}
+            img={Track}
           />
           <CompareComponent
             desc={`Trading Analytics is vital to your success. It helps you make profitable trading decisions amidst the abundance of market information and the complexity of patterns in the crypto trading world.`}
@@ -83,7 +96,7 @@ Coinigy Versus Altrady`}
             kickerText="Charts"
             title={`Charts`}
             content="Altrady’s Interactive and Customizable Crypto Trading Charts Empower You to Strategically Spot Trends and Patterns with Convenience and Ease"
-            img={BlogImg}
+            img={MultichartHero}
           />
           <CompareComponent
             desc={`Charts are essential elements of any crypto trading platform. Through charts, we get to see what’s happening in crypto markets, and we get to discover patterns that help us find profitable trading opportunities. Altrady’s management has designed your crypto charts to become customizable and interactive so that you can see the most relevant information with ease and be able to use such information to your advantage.`}
@@ -100,7 +113,7 @@ Coinigy Versus Altrady`}
             title={`Altrady vs Coinigy
 Crypto Market Scanner`}
             content="Crypto Base Scanner & Quick Scanner are Unique to Altrady"
-            img={BlogImg}
+            img={CBSHero}
           />
           <CompareComponent
             desc={`Both Altrady and Coinigy have crypto market scanners that can automatically monitor thousands of cryptocurrency markets 24/7. However, what is unique to Altrady is its specialized crypto scanners called the Crypto Base Scanner and Quick Scanner.`}
@@ -133,7 +146,7 @@ Crypto Market Scanner`}
             title={`Altrady vs Coinigy
 Portfolio Management`}
             content="Altrady has Advanced Portfolio Management Features for Insightful Trading"
-            img={BlogImg}
+            img={PortfolioHero}
           />
           <CompareComponent
             altrady="Altrady"
@@ -148,7 +161,7 @@ Portfolio Management`}
             title={`Altrady vs Coinigy
 Trading Page Layout`}
             content="Altrady Gives You a Personalized Experience through a Customizable Dashboard"
-            img={BlogImg}
+            img={LayoutsHero}
           />
           <CompareComponent
             altrady="Altrady"
@@ -168,7 +181,7 @@ Trading Page Layout`}
 Monitor Current Trades`}
             content="Altrady Trading Software Tools Developed By Traders For Traders!
 Benoist is the brain behind the code, not just the CEO"
-            img={BlogImg}
+            img={BoughtSold}
           />
           <CompareComponent
             altrady="Altrady"
@@ -183,7 +196,7 @@ Benoist is the brain behind the code, not just the CEO"
             title={`Altrady Automatic Break-Even 
 Calculator To Minimize Risks And 
 Maximize Profits`}
-            img={BlogImg}
+            img={BreakEven}
           />
           <CompareComponent
             altrady="Altrady"
@@ -200,7 +213,7 @@ Maximize Profits`}
           <ComparisonContent
             kickerText="TRADING FUNCTIONS"
             title={`There are different order types for different trading strategies, methods, and goals.`}
-            img={BlogImg}
+            img={TakeProfit}
           />
           <CompareComponent
             altrady="Altrady"
@@ -213,7 +226,7 @@ Maximize Profits`}
           <ComparisonContent
             kickerText="TRADING FUNCTIONS"
             title={`Altrady Allows Trade Import from Exchanges`}
-            img={BlogImg}
+            img={PastTrades}
           />
           <CompareComponent
             altrady="Altrady"
@@ -226,7 +239,7 @@ Maximize Profits`}
           <ComparisonContent
             kickerText="TRADING FUNCTIONS"
             title={`Altrady's Notes Widgets Serves as Your Integrated Trading Journal`}
-            img={BlogImg}
+            img={NotesHero}
           />
           <CompareComponent
             altrady="Altrady"

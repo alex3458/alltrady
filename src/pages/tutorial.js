@@ -22,8 +22,10 @@ const Tutorial = ({ pageContext, data }) => {
   return (
     <AcademyPageLayout>
       <Seo
-        title="Altrady - Crypto Academy To Expand Your Trading Knowledge"
-        description="Altrady brings to you his cryptocurrency academy to help beginners and more advanced crypto traders with their trading strategy."
+        title={currentTutorial?.meta_title}
+        description={currentTutorial?.meta_description}
+        keywords={currentTutorial?.meta_keywords}
+        meta="nofollow, noindex"
       />
       <TutorialSection
         currentTutorial={currentTutorial}

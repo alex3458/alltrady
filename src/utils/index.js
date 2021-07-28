@@ -11,3 +11,16 @@ export const secToHMS = time => {
   ret += "" + secs
   return ret
 }
+
+export const getRel = linkName => {
+  const linkSplit = linkName[0]?.split("~")
+  const len = linkSplit?.length
+  if (len !== 1 && len !== undefined) return JSON.parse(linkSplit[1])
+}
+
+export const getLink = linkName => {
+  const linkSplit = linkName[0]?.split("~")
+  const len = linkSplit?.length
+  if (len !== 1 && len !== undefined) return linkSplit[0]
+  else return linkName
+}

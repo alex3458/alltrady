@@ -9,11 +9,8 @@ import TradingToolSection from "../sections/trading-tool"
 import TradingFeaturesSection from "../sections/trading-features"
 import ExclusiveVideoSection from "../sections/exclusive-video"
 import BenefitSection from "../sections/benefit"
-import {
-  TradingPlatform,
-  FastPowerfulTechnology,
-  FundSecurity,
-} from "../utils/imgLoader"
+import { HomeHero } from "../utils/imgLoader"
+import { benoistTestimonial, reviewsData } from "../utils/staticData"
 import FeatureCTASection from "../sections/feature-cta"
 import JoinNowSection from "../sections/join-now"
 
@@ -33,17 +30,26 @@ const benefitSectionData = [
     title: "All-in-one trading platform",
     content: `With Altrady, you are at a huge advantage!
 Our tools and technology give you the easiest way to manage your trades and portfolio.`,
-    imgSrc: TradingPlatform,
+    image: {
+      url:
+        "https://altrady.cdn.prismic.io/altrady/9013621d-3a1f-41ca-8c54-3f6dbbff022a_trading-platform.svg",
+    },
   },
   {
     title: "Fast & powerful technology",
     content: `Make the right trading actions with speed and reliability! Altrady's innovative technology lets you react to changing markets with accuracy and efficiency.`,
-    imgSrc: FastPowerfulTechnology,
+    image: {
+      url:
+        "https://altrady.cdn.prismic.io/altrady/7df34a92-4157-4105-aea4-afd4bb197cd9_fast-powerful-technology.svg",
+    },
   },
   {
     title: "100% fund security",
     content: `Altrady uses state-of-the-art encryption to safely store you API keys on the servers.`,
-    imgSrc: FundSecurity,
+    image: {
+      url:
+        "https://altrady.cdn.prismic.io/altrady/2cd921c7-4b45-4e00-8fce-b637e2930b8f_found-security.svg",
+    },
   },
 ]
 const WhyAltrady = () => {
@@ -54,19 +60,23 @@ const WhyAltrady = () => {
         headerContent={headerContent}
         sectionContent={sectionContent}
         kickerText="Why Altrady?"
+        heroImg={HomeHero}
       />
       <TradeNowCTA
         title="Take Advantage Of The Fastest Crypto Trading Tool"
         description="Suitable For Day Trading or Automated Trading"
         btn="Trade now with Altrady"
       />
-      <PeopleSayingSection3 showHeader={false} extraClsName="why-altrady" />
+      <PeopleSayingSection3
+        showHeader={false}
+        extraClsName="why-altrady"
+        {...benoistTestimonial}
+      />
       <AltradySubscribeListSection
         title={altradySubscribeTitle}
         content={altradySubscribeContent}
       />
-
-      <ReviewsSection />
+      <ReviewsSection {...reviewsData} />
       <TradingToolSection />
       <TradingFeaturesSection />
       <ExclusiveVideoSection />
